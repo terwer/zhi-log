@@ -1,0 +1,38 @@
+{
+  "name": "zhi-log",
+  "version": "0.0.0",
+  "description": "a simple logger for Node",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/zhi-log.umd.cjs",
+  "module": "./dist/zhi-log.js",
+  "exports": {
+    ".": {
+      "import": "./dist/zhi-log.js",
+      "require": "./dist/zhi-log.umd.cjs"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "log",
+    "node"
+  ],
+  "author": "terwer",
+  "license": "MIT",
+  "repository": "terwer/zhi-log",
+  "homepage": "https://terwer.space",
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.2"
+  },
+  "dependencies": {
+    "loglevel": "^1.8.1",
+    "loglevel-plugin-prefix": "^0.8.4"
+  }
+}
