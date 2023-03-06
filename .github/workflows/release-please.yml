@@ -23,6 +23,8 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       # Setup pnpm
       - uses: pnpm/action-setup@v2
+        with:
+          version: 7.29.0
         if: ${{ steps.release.outputs.release_created }}
       # Install dependencies
       - run: pnpm install
