@@ -16,7 +16,6 @@ jobs:
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
       - run: echo "A release was created."
         if: ${{ steps.release.outputs.releases_created }}
-      # For root level packages: ${{ steps.release.outputs.package-a--tag_name }}
       - run: echo "Release ${{ steps.release.outputs['packages/package-a--tag_name'] }} created for package-a."
         if: ${{ steps.release.outputs['packages/package-a--release_created'] }}
 
@@ -27,7 +26,6 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
           git tag -d v${{ steps.release.outputs.major }} || true
           git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
           git push origin :v${{ steps.release.outputs.major }} || true
@@ -37,19 +35,15 @@ jobs:
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
 
-      # Setup node
-      - uses: actions/setup-node@v3
-      - name: Setup node
+      # publish to npm
+      - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install modules
-        if: ${{ steps.release.outputs.release_created }}
-        run: pnpm install
-      # publish to npm
       - name: Publish to npm
         if: ${{ steps.release.outputs.release_created }}
         run: |
+          pnpm install
           pnpm build
           npm publish --access public
         env:
