@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/terwer/zhi-log/compare/v1.0.5...v1.0.6) (2023-03-06)
+
+
+### Bug Fixes
+
+* add pnpm for ci ([a17c3ca](https://github.com/terwer/zhi-log/commit/a17c3ca9462381a49d9971297eef9da37a284c9d))
+
 ## [1.0.5](https://github.com/terwer/zhi-log/compare/v1.0.4...v1.0.5) (2023-03-06)
 
 
