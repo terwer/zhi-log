@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/terwer/zhi-log/compare/v1.0.3...v1.0.4) (2023-03-06)
+
+
+### Bug Fixes
+
+* minify config ([14b1d3d](https://github.com/terwer/zhi-log/commit/14b1d3dfcf666ad464a2a5a62783d1b41585baa2))
+
 ## [1.0.3](https://github.com/terwer/zhi-log/compare/v1.0.2...v1.0.3) (2023-03-06)
 
 
