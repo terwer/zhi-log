@@ -24,7 +24,7 @@ logger.error("This is error log")
 You can set a custom log level
 
 ```js
-const logFactory = new LogFactory()
+const logFactory = new LogFactory("DEBUG")
 const logger = logFactory.getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
