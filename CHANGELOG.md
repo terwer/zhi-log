@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/terwer/zhi-log/compare/v1.0.2...v1.0.3) (2023-03-06)
+
+
+### Bug Fixes
+
+* publish to npm ([636122f](https://github.com/terwer/zhi-log/commit/636122f6ae6ef447d9563ac945c3b3d654bfe584))
+
 ## [1.0.2](https://github.com/terwer/zhi-log/compare/v1.0.1...v1.0.2) (2023-03-06)
 
 
