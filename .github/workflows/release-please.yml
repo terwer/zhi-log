@@ -38,7 +38,7 @@ jobs:
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
 
       # Setup node
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
       - name: Setup node
         with:
           node-version: '16.x'
