@@ -21,7 +21,8 @@ class Log {
       | typeof LOG_LEVEL_DEBUG
       | typeof LOG_LEVEL_INFO
       | typeof LOG_LEVEL_WARN
-      | typeof LOG_LEVEL_ERROR
+      | typeof LOG_LEVEL_ERROR,
+    sign?: string
   ) {
     // polyfill due to https://github.com/vitejs/vite/issues/7385
     const chalk = {
@@ -48,7 +49,8 @@ class Log {
 
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        const strarr = ["[zhi]"]
+        let defaultSign = sign ?? "zhi"
+        const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")
         )
@@ -97,15 +99,17 @@ class LogFactory {
    * 默认日志级别
    *
    * @param level 可选，未设置默认INFO
+   * @param sign 可选前缀，默认zhi
    */
   constructor(
     level?:
       | typeof LOG_LEVEL_DEBUG
       | typeof LOG_LEVEL_INFO
       | typeof LOG_LEVEL_WARN
-      | typeof LOG_LEVEL_ERROR
+      | typeof LOG_LEVEL_ERROR,
+    sign?: string
   ) {
-    this.log = new Log(level)
+    this.log = new Log(level, sign)
   }
 
   public getLogger(loggerName: string): Logger {

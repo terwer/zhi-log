@@ -17,4 +17,12 @@ describe("test log", () => {
     logger.info("This is info log")
     logger.error("This is error log")
   })
+
+  it("test custom sign", function () {
+    const logFactory = new LogFactory("DEBUG", "my-log")
+    const logger = logFactory.getLogger("test")
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
 })
