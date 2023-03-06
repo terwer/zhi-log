@@ -56,6 +56,9 @@ class Log {
         )
 
         switch (level) {
+          case LOG_LEVEL_DEBUG:
+            strarr.push(chalk.gray(level.toUpperCase().toString()))
+            break
           case LOG_LEVEL_INFO:
             strarr.push(chalk.green(level.toUpperCase().toString()))
             break
