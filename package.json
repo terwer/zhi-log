@@ -16,7 +16,7 @@
       "require": "./lib/index.cjs"
     }
   },
-  "typings": "./dist/zhi-log.d.ts",
+  "typings": "./typing/index.d.ts",
   "scripts": {
     "build": "python script/build.py",
     "test": "vitest",
