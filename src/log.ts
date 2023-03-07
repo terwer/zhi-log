@@ -85,7 +85,7 @@ class Log {
 
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        let defaultSign = sign ?? process.env.DEFAULT_LOGGER ?? "zhi"
+        const defaultSign = sign ?? process.env.DEFAULT_LOGGER ?? "zhi"
         const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")

@@ -11,5 +11,7 @@ if __name__ == "__main__":
     scriptutils.switch_workdir()
 
     scriptutils.rm_folder("./lib")
+    os.system("pnpm prettier")
+    os.system("pnpm lint")
     os.system("vite build")
     print("build finished.")

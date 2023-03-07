@@ -49,7 +49,7 @@ class DefaultLogFactory extends LogFactory {
   }
 
   getLogger(): log.Logger {
-    let callerName = this.callerName()
+    const callerName = this.callerName()
     return super.getLogger(callerName)
   }
 }
