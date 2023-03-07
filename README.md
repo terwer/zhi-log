@@ -27,12 +27,21 @@ logger.error("This is error log")
 // [zhi] [11:26:51] ERROR /Users/terwer/Documents/mydocs/zhi-log/test/log.test.ts:33:48 : This is error log
 ```
 
+even simpler
+
+```bash
+const logger = LogUtil.defaultLogger()
+logger.info("This is info log")
+```
+
 You can set a custom log level
 
 ```js
 import LogUtil from "zhi-log"
 
-const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG).getLogger("test")
+const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG).getLogger(
+  "test"
+)
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")
@@ -47,7 +56,10 @@ You can also set a custom prefix sign
 ```js
 import LogUtil from "zhi-log"
 
-const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG, "my-log").getLogger("test")
+const logger = LogUtil.customLogFactory(
+  LogLevelEnum.LOG_LEVEL_DEBUG,
+  "my-log"
+).getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")

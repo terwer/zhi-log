@@ -15,12 +15,13 @@
     "noImplicitAny": true,
     "declaration": true,
     "declarationMap": true,
-    "types": [],
-    "lib": ["ESNext"],
-//    "outDir": "lib",
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"]
-    }
+      "~/*": ["./*"],
+      "loglevel": ["node_modules/loglevel"]
+    },
+    "types": [],
+    "lib": ["ESNext"]
   },
   "include": ["src/**/*.ts"]
 }
