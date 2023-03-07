@@ -20,8 +20,8 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["./**/*.ts", "*.ts", "typings/*.d.ts"],
-  "exclude": [".github", "node_modules"],
+  "include": ["./**/*.ts", "*.ts"],
+  "exclude": [".github", "node_modules", "dist"],
   "references": [
     {
       "path": "./tsconfig.node.json"

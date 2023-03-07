@@ -24,7 +24,9 @@
  */
 
 import { describe, it } from "vitest"
+// @ts-ignore
 import LogUtil from "dist/logUtil"
+// @ts-ignore
 import LogLevelEnum from "dist/logConstants"
 
 describe("test dist", () => {
