@@ -23,34 +23,27 @@
  * questions.
  */
 
-import { Logger } from "loglevel"
-import LogLevelEnum from "~/src/logConstants"
-import Log from "~/src/log"
-import * as dotenv from "dotenv"
+import { describe, it } from "vitest"
+// @ts-ignore
+import LogUtil from "dist/logUtil"
+// @ts-ignore
+import LogLevelEnum from "dist/logConstants"
 
-/**
- * 日志记录工厂
- *
- * @author terwer
- * @since 1.0.0
- */
-abstract class LogFactory {
-  private log
+describe("test dist", () => {
+  it("test log", function () {
+    const logger = LogUtil.defaultLogFactory().getLogger()
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
 
-  /**
-   * 默认日志级别
-   *
-   * @param level 可选，未设置默认INFO
-   * @param sign 可选前缀，默认zhi
-   */
-  constructor(level?: LogLevelEnum, sign?: string) {
-    dotenv.config()
-    this.log = new Log(level, sign)
-  }
-
-  protected getLogger(loggerName: string): Logger {
-    return this.log.getLogger(loggerName)
-  }
-}
-
-export default LogFactory
+  it("test custom sign", function () {
+    const logger = LogUtil.customLogFactory(
+      LogLevelEnum.LOG_LEVEL_DEBUG,
+      "my-log"
+    ).getLogger("test")
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
+})

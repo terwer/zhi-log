@@ -1,5 +1,5 @@
 import path from "path"
-import {defineConfig} from "vite"
+import { defineConfig } from "vite"
 
 export const commonConfig = {
   plugins: [],
@@ -10,10 +10,6 @@ export const commonConfig = {
         find: "~",
         replacement: path.resolve(__dirname, ""),
       },
-      {
-        find: "@",
-        replacement: path.resolve(__dirname, "public"),
-      },
     ],
   },
 }
@@ -21,26 +17,16 @@ export const commonConfig = {
 // https://vitejs.dev/config/
 export default defineConfig({
   ...commonConfig,
-  // base: "/appearance/themes/zhi/dist",
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: path.resolve(__dirname, "src/log.ts"),
-      name: "ZhiLog",
-      // the proper extensions will be added
-      fileName: "zhi-log",
+      entry: [
+        path.resolve(__dirname, "src/logUtil.ts"),
+        path.resolve(__dirname, "src/logConstants.ts"),
+      ],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ["vue"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: "Vue",
-        },
-      },
+      external: ["path"],
     },
+    minify: false,
   },
 })

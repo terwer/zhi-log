@@ -6,12 +6,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/zhi-log.js",
-  "module": "./dist/zhi-log.js",
+  "main": "./dist/logUtil.js",
+  "module": "./dist/logUtil.js",
   "exports": {
     ".": {
-      "import": "./dist/zhi-log.js",
-      "require": "./dist/zhi-log.umd.cjs"
+      "import": "./dist/logUtil.js",
+      "require": "./dist/logUtil.cjs"
     }
   },
   "scripts": {

@@ -24,7 +24,6 @@
  */
 
 import { describe, it } from "vitest"
-import LogFactory from "~/src/logFactory"
 import LogUtil from "~/src/LogUtil"
 import LogLevelEnum from "~/src/logConstants"
 
