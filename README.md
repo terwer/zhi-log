@@ -2,7 +2,14 @@
 
 a simple logger for Node
 
-[api-docs](etc/zhi-log.api.md)
+![ci](https://img.shields.io/github/actions/workflow/status/terwer/zhi-log/ci.yml?branch=main)
+![version](https://img.shields.io/github/release/terwer/zhi-log.svg?style=flat-square)
+
+## Docs
+
+- [api](etc/zhi-log.api.md)
+
+- [docs](doc/index.md)
 
 ## Features
 

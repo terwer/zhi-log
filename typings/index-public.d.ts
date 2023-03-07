@@ -40,6 +40,7 @@ export declare class DefaultLogFactory extends LogFactory {
 /**
  * 默认日志记录器
  *
+ * @public
  * @author terwer
  * @since 1.0.7
  */

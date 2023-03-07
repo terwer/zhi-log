@@ -6,7 +6,8 @@
   "files": [
     "lib",
     "typings",
-    "etc"
+    "etc",
+    "doc"
   ],
   "main": "./lib/index.js",
   "module": "./lib/index.js",
@@ -35,6 +36,7 @@
   "repository": "terwer/zhi-log",
   "homepage": "https://terwer.space",
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.21.5",
     "@microsoft/api-extractor": "^7.34.4",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
