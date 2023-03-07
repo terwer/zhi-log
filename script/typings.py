@@ -11,7 +11,10 @@ if __name__ == "__main__":
     scriptutils.switch_workdir()
 
     scriptutils.mkdir("./etc")
+    scriptutils.mkdir("./typings")
     os.system("tsc")
     # os.system("api-extractor run --local --diagnostics")
     os.system("api-extractor run --local")
+    os.system("pnpm prettier")
+    os.system("pnpm lint")
     print("compile finished.")
