@@ -1,8 +1,8 @@
 import path from "path"
 import { defineConfig } from "vite"
+import dts from "vite-plugin-dts"
 
 export const commonConfig = {
-  plugins: [],
   base: "./",
   resolve: {
     alias: [
@@ -17,6 +17,7 @@ export const commonConfig = {
 // https://vitejs.dev/config/
 export default defineConfig({
   ...commonConfig,
+  plugins: [dts()],
   build: {
     lib: {
       entry: [
@@ -27,6 +28,5 @@ export default defineConfig({
     rollupOptions: {
       external: ["path"],
     },
-    minify: false,
   },
 })
