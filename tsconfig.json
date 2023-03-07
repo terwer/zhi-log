@@ -17,10 +17,10 @@
     "noImplicitAny": false,
     "types": ["node"],
     "paths": {
-      "~/*": ["./*"],
+      "~/*": ["./*"]
     }
   },
-  "include": ["./**/*.ts", "*.ts", "*.d.ts"],
+  "include": ["./**/*.ts", "*.ts", "typings/*.d.ts"],
   "exclude": [".github", "node_modules"],
   "references": [
     {
