@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/terwer/zhi-log/compare/v1.2.4...v1.2.5) (2023-03-07)
+
+
+### Bug Fixes
+
+* add formatter ([85c5030](https://github.com/terwer/zhi-log/commit/85c50304b1b7f0647ae48747dd93aa6c7947d0b4))
+
 ## [1.2.4](https://github.com/terwer/zhi-log/compare/v1.2.3...v1.2.4) (2023-03-07)
 
 
