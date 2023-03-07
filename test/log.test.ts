@@ -29,7 +29,7 @@ import LogLevelEnum from "~/src/logConstants"
 
 describe("test log", () => {
   it("test default log", function () {
-    const logger = LogUtil.defaultLogFactory().getLogger()
+    const logger = LogUtil.defaultLogger()
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")

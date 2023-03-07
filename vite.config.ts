@@ -19,7 +19,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["path"],
+      external: ["fs", "path", "os"],
       output: {
         exports: "named",
       },

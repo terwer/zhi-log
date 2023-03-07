@@ -12,11 +12,6 @@ export class CustomLogFactory extends LogFactory {
 }
 
 // @public
-export class DefaultLogFactory extends LogFactory {
-  getLogger(): DefaultLogger
-}
-
-// @public
 export interface DefaultLogger extends Logger {
   colors?: string[]
   debug(...msg: any[]): void
@@ -29,8 +24,8 @@ export interface DefaultLogger extends Logger {
 
 // @public
 export abstract class LogFactory {
-  constructor(level?: LogLevelEnum, sign?: string)
-  protected getLogger(loggerName: string): DefaultLogger
+  protected constructor(level?: LogLevelEnum, sign?: string)
+  protected getLogger(loggerName?: string): DefaultLogger
 }
 
 // @public
@@ -44,7 +39,6 @@ export enum LogLevelEnum {
 // @public
 class LogUtil {
   static customLogFactory(level?: LogLevelEnum, sign?: string): CustomLogFactory
-  static defaultLogFactory(): DefaultLogFactory
   static defaultLogger(): DefaultLogger
 }
 export default LogUtil

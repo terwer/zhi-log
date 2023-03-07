@@ -19,7 +19,4 @@ if __name__ == "__main__":
     os.system("api-documenter markdown -i temp -o doc")
     os.system("pnpm prettier")
     os.system("pnpm lint")
-    os.system("rm ./src/*.d.ts")
-    os.system("rm ./src/*.map")
-    os.system("rm ./src/*.js")
     print("compile finished.")

@@ -25,7 +25,6 @@
 
 import LogLevelEnum from "~/src/logConstants"
 import Log from "~/src/log"
-import dotenv from "dotenv"
 import DefaultLogger from "~/src/logger"
 
 /**
@@ -44,9 +43,8 @@ abstract class LogFactory {
    * @param level - 可选，未设置默认INFO
    * @param sign - 可选前缀，默认zhi
    */
-  constructor(level?: LogLevelEnum, sign?: string) {
-    dotenv.config()
-    this.log = new Log(level ?? LogLevelEnum.LOG_LEVEL_INFO, sign)
+  protected constructor(level?: LogLevelEnum, sign?: string) {
+    this.log = new Log(level, sign)
   }
 
   /**
@@ -55,7 +53,7 @@ abstract class LogFactory {
    * @param loggerName - 日志记录器名称
    * @protected
    */
-  protected getLogger(loggerName: string): DefaultLogger {
+  protected getLogger(loggerName?: string): DefaultLogger {
     return this.log.getLogger(loggerName)
   }
 }

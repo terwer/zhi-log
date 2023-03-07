@@ -23,39 +23,59 @@
  * questions.
  */
 
-import LogFactory from "~/src/factory/logFactory"
-import DefaultLogger from "~/src/logger"
+import LogLevelEnum from "~/src/logConstants"
 
 /**
- * 默认日志工厂
+ * 解析日志级别为枚举
  *
- * @public
  * @author terwer
- * @since 1.0.7
+ * @since 1.4.0
  */
-class DefaultLogFactory extends LogFactory {
-  private callerName() {
-    try {
-      throw new Error()
-    } catch (e: any) {
-      try {
-        let caller = e.stack.split("at ")[3].split(" ")[0]
-        caller = caller.trim().replace(/\s+/g, "")
-        return caller
-      } catch (e) {
-        return undefined
-      }
+class EnvHelper {
+  /**
+   * 解析日志级别为枚举
+   *
+   * @param enumObj 枚举对象
+   * @param value 配置的值
+   */
+  private static stringToEnumValue = <
+    T extends Record<string, string>,
+    K extends keyof T
+  >(
+    enumObj: T,
+    value: string
+  ): T[keyof T] | undefined =>
+    enumObj[
+      Object.keys(enumObj).filter(
+        (k) => enumObj[k as K].toString() === value
+      )[0] as keyof typeof enumObj
+    ]
+
+  /**
+   * 获取配置的日志级别
+   */
+  public static getEnvLevel(): LogLevelEnum | undefined {
+    const envLevel = process.env.LOG_LEVEL
+      ? EnvHelper.stringToEnumValue(
+          LogLevelEnum,
+          process.env.LOG_LEVEL.toUpperCase()
+        )
+      : LogLevelEnum.LOG_LEVEL_INFO
+    if (!envLevel) {
+      console.warn(
+        "[zhi-log] LOG_LEVEL is invalid in you .env file.Must be either debug, info, warn or error, fallback to default info level"
+      )
     }
+
+    return envLevel
   }
 
   /**
-   * 获取日志记录器
+   * 获取默认日志
    */
-
-  getLogger(): DefaultLogger {
-    const callerName = this.callerName()
-    return super.getLogger(callerName)
+  public static getEnvLogger(): string | undefined {
+    return process.env.DEFAULT_LOGGER
   }
 }
 
-export default DefaultLogFactory
+export default EnvHelper

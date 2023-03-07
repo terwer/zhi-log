@@ -4,7 +4,6 @@
  */
 
 import LogFactory from "~/src/factory/logFactory"
-import DefaultLogFactory from "~/src/factory/defaultLogFactory"
 import CustomLogFactory from "~/src/factory/customLogFactory"
 import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
@@ -18,17 +17,10 @@ import DefaultLogger from "~/src/logger"
  */
 class LogUtil {
   /**
-   * 默认日志工厂
-   */
-  public static defaultLogFactory(): DefaultLogFactory {
-    return new DefaultLogFactory()
-  }
-
-  /**
    * 默认日志记录器
    */
   public static defaultLogger(): DefaultLogger {
-    return LogUtil.defaultLogFactory().getLogger()
+    return LogUtil.customLogFactory().getLogger()
   }
 
   /**
@@ -40,5 +32,5 @@ class LogUtil {
 }
 
 export default LogUtil
-export { LogLevelEnum, LogFactory, CustomLogFactory, DefaultLogFactory }
+export { LogLevelEnum, LogFactory, CustomLogFactory }
 export type { DefaultLogger }

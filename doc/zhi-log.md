@@ -8,11 +8,10 @@ This is the documentation for my package.
 
 ## Classes
 
-| Class                                               | Description    |
-| --------------------------------------------------- | -------------- |
-| [CustomLogFactory](./zhi-log.customlogfactory.md)   | 自定义日志工厂 |
-| [DefaultLogFactory](./zhi-log.defaultlogfactory.md) | 默认日志工厂   |
-| [LogUtil](./zhi-log.logutil.md)                     | 日志工具类     |
+| Class                                             | Description    |
+| ------------------------------------------------- | -------------- |
+| [CustomLogFactory](./zhi-log.customlogfactory.md) | 自定义日志工厂 |
+| [LogUtil](./zhi-log.logutil.md)                   | 日志工具类     |
 
 ## Abstract Classes
 

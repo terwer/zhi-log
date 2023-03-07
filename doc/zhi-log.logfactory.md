@@ -14,9 +14,9 @@ declare abstract class LogFactory
 
 ## Constructors
 
-| Constructor                                                         | Modifiers | Description  |
-| ------------------------------------------------------------------- | --------- | ------------ |
-| [(constructor)(level, sign)](./zhi-log.logfactory._constructor_.md) |           | 默认日志级别 |
+| Constructor                                                         | Modifiers              | Description  |
+| ------------------------------------------------------------------- | ---------------------- | ------------ |
+| [(constructor)(level, sign)](./zhi-log.logfactory._constructor_.md) | <code>protected</code> | 默认日志级别 |
 
 ## Methods
 

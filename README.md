@@ -25,20 +25,13 @@ Default devel is INFO
 ```js
 import LogUtil from "zhi-log"
 
-const logger = LogUtil.defaultLogFactory().getLogger()
+const logger = LogUtil.defaultLogger()
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")
 
 // [zhi] [11:26:51] INFO /Users/terwer/Documents/mydocs/zhi-log/test/log.test.ts:33:48 : This is info log
 // [zhi] [11:26:51] ERROR /Users/terwer/Documents/mydocs/zhi-log/test/log.test.ts:33:48 : This is error log
-```
-
-even simpler
-
-```bash
-const logger = LogUtil.defaultLogger()
-logger.info("This is info log")
 ```
 
 You can set a custom log level

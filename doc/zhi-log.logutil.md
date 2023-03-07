@@ -17,5 +17,4 @@ declare class LogUtil
 | Method                                                                 | Modifiers           | Description    |
 | ---------------------------------------------------------------------- | ------------------- | -------------- |
 | [customLogFactory(level, sign)](./zhi-log.logutil.customlogfactory.md) | <code>static</code> | 自定义日志工厂 |
-| [defaultLogFactory()](./zhi-log.logutil.defaultlogfactory.md)          | <code>static</code> | 默认日志工厂   |
 | [defaultLogger()](./zhi-log.logutil.defaultlogger.md)                  | <code>static</code> | 默认日志记录器 |

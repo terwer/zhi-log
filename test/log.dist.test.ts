@@ -28,8 +28,8 @@ import LogUtil from "~/lib/index"
 import { LogLevelEnum } from "~/lib/index"
 
 describe("test dist", () => {
-  it("test log", function () {
-    const logger = LogUtil.defaultLogFactory().getLogger()
+  it("test default log", function () {
+    const logger = LogUtil.defaultLogger()
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")

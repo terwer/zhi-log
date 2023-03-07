@@ -9,14 +9,14 @@
 **Signature:**
 
 ```typescript
-protected getLogger(loggerName: string): DefaultLogger;
+protected getLogger(loggerName?: string): DefaultLogger;
 ```
 
 ## Parameters
 
-| Parameter  | Type   | Description    |
-| ---------- | ------ | -------------- |
-| loggerName | string | 日志记录器名称 |
+| Parameter  | Type   | Description                 |
+| ---------- | ------ | --------------------------- |
+| loggerName | string | _(Optional)_ 日志记录器名称 |
 
 **Returns:**
 

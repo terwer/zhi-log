@@ -9,7 +9,7 @@
 **Signature:**
 
 ```typescript
-constructor(level?: LogLevelEnum, sign?: string);
+protected constructor(level?: LogLevelEnum, sign?: string);
 ```
 
 ## Parameters

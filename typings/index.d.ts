@@ -23,21 +23,6 @@ export declare class CustomLogFactory extends LogFactory {
 }
 
 /**
- * 默认日志工厂
- *
- * @public
- * @author terwer
- * @since 1.0.7
- */
-export declare class DefaultLogFactory extends LogFactory {
-  private callerName
-  /**
-   * 获取日志记录器
-   */
-  getLogger(): DefaultLogger
-}
-
-/**
  * 默认日志记录器
  *
  * @public
@@ -103,14 +88,14 @@ export declare abstract class LogFactory {
    * @param level - 可选，未设置默认INFO
    * @param sign - 可选前缀，默认zhi
    */
-  constructor(level?: LogLevelEnum, sign?: string)
+  protected constructor(level?: LogLevelEnum, sign?: string)
   /**
    * 获取日志记录器
    *
    * @param loggerName - 日志记录器名称
    * @protected
    */
-  protected getLogger(loggerName: string): DefaultLogger
+  protected getLogger(loggerName?: string): DefaultLogger
 }
 
 /**
@@ -147,10 +132,6 @@ export declare enum LogLevelEnum {
  * @since 1.0.7
  */
 declare class LogUtil {
-  /**
-   * 默认日志工厂
-   */
-  static defaultLogFactory(): DefaultLogFactory
   /**
    * 默认日志记录器
    */

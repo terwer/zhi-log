@@ -2,56 +2,49 @@
 
 ## [1.4.0](https://github.com/terwer/zhi-log/compare/v1.3.0...v1.4.0) (2023-03-07)
 
-
 ### Features
 
-* fix dts path ([422459e](https://github.com/terwer/zhi-log/commit/422459e520d3c4f6ed2d4e0428924004d8429cca))
+- fix dts path ([422459e](https://github.com/terwer/zhi-log/commit/422459e520d3c4f6ed2d4e0428924004d8429cca))
 
 ## [1.3.0](https://github.com/terwer/zhi-log/compare/v1.2.7...v1.3.0) (2023-03-07)
 
-
 ### Features
 
-* add docs ([192623f](https://github.com/terwer/zhi-log/commit/192623f876e4947e2d02dfbc0ac79a164ccbb219))
-
+- add docs ([192623f](https://github.com/terwer/zhi-log/commit/192623f876e4947e2d02dfbc0ac79a164ccbb219))
 
 ### Bug Fixes
 
-* add custom logger ([6603adb](https://github.com/terwer/zhi-log/commit/6603adb624c741807f31b8cdedee9a2a9c7a112e))
-* add dts to npm ([60221b7](https://github.com/terwer/zhi-log/commit/60221b7374af3985aa65bc49332121d34cc49ca9))
+- add custom logger ([6603adb](https://github.com/terwer/zhi-log/commit/6603adb624c741807f31b8cdedee9a2a9c7a112e))
+- add dts to npm ([60221b7](https://github.com/terwer/zhi-log/commit/60221b7374af3985aa65bc49332121d34cc49ca9))
 
 ## [1.2.7](https://github.com/terwer/zhi-log/compare/v1.2.6...v1.2.7) (2023-03-07)
 
-
 ### Bug Fixes
 
-* change entry ([5ebd0eb](https://github.com/terwer/zhi-log/commit/5ebd0eb1c8ef38022cc0609ce263b9ac1021c026))
+- change entry ([5ebd0eb](https://github.com/terwer/zhi-log/commit/5ebd0eb1c8ef38022cc0609ce263b9ac1021c026))
 
 ## [1.2.6](https://github.com/terwer/zhi-log/compare/v1.2.5...v1.2.6) (2023-03-07)
 
-
 ### Bug Fixes
 
-* add coverage ([5b79183](https://github.com/terwer/zhi-log/commit/5b79183593cb2e0d988c90ba21429f4f2b17a39b))
-* fix entry ([d816eae](https://github.com/terwer/zhi-log/commit/d816eaec72d1d90f825fc11d8b7b5d6a9b3c8876))
+- add coverage ([5b79183](https://github.com/terwer/zhi-log/commit/5b79183593cb2e0d988c90ba21429f4f2b17a39b))
+- fix entry ([d816eae](https://github.com/terwer/zhi-log/commit/d816eaec72d1d90f825fc11d8b7b5d6a9b3c8876))
 
 ## [1.2.5](https://github.com/terwer/zhi-log/compare/v1.2.4...v1.2.5) (2023-03-07)
 
-
 ### Bug Fixes
 
-* add formatter ([85c5030](https://github.com/terwer/zhi-log/commit/85c50304b1b7f0647ae48747dd93aa6c7947d0b4))
+- add formatter ([85c5030](https://github.com/terwer/zhi-log/commit/85c50304b1b7f0647ae48747dd93aa6c7947d0b4))
 
 ## [1.2.4](https://github.com/terwer/zhi-log/compare/v1.2.3...v1.2.4) (2023-03-07)
 
-
 ### Bug Fixes
 
-* add api-extractor ([840ae1e](https://github.com/terwer/zhi-log/commit/840ae1e82a60777ac1177582d1c85dd7eb357033))
-* add api-extractor ([42f8261](https://github.com/terwer/zhi-log/commit/42f8261c74e73a07cb1a6825167490971ed769eb))
-* change ci command ([71d20c9](https://github.com/terwer/zhi-log/commit/71d20c9a396166f82d29bccd5f76c2068029ea5b))
-* fix tests ([15e6af6](https://github.com/terwer/zhi-log/commit/15e6af633dc50e5f6a80f23692a74307292d9e60))
-* fix tests ([3107727](https://github.com/terwer/zhi-log/commit/310772747be3c8f78e6c12577c85618590f75acc))
+- add api-extractor ([840ae1e](https://github.com/terwer/zhi-log/commit/840ae1e82a60777ac1177582d1c85dd7eb357033))
+- add api-extractor ([42f8261](https://github.com/terwer/zhi-log/commit/42f8261c74e73a07cb1a6825167490971ed769eb))
+- change ci command ([71d20c9](https://github.com/terwer/zhi-log/commit/71d20c9a396166f82d29bccd5f76c2068029ea5b))
+- fix tests ([15e6af6](https://github.com/terwer/zhi-log/commit/15e6af633dc50e5f6a80f23692a74307292d9e60))
+- fix tests ([3107727](https://github.com/terwer/zhi-log/commit/310772747be3c8f78e6c12577c85618590f75acc))
 
 ## [1.2.3](https://github.com/terwer/zhi-log/compare/v1.2.2...v1.2.3) (2023-03-07)
 
