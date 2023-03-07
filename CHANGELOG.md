@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/terwer/zhi-log/compare/v1.2.0...v1.2.1) (2023-03-07)
+
+
+### Bug Fixes
+
+* fix entry ([7b0d7c1](https://github.com/terwer/zhi-log/commit/7b0d7c1ae5a6ecb984aa32cdc6b7a6309fe3a851))
+
 ## [1.2.0](https://github.com/terwer/zhi-log/compare/v1.1.0...v1.2.0) (2023-03-07)
 
 
