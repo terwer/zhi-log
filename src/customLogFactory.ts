@@ -23,35 +23,24 @@
  * questions.
  */
 
-import { describe, it } from "vitest"
 import LogFactory from "~/src/logFactory"
-import LogUtil from "~/src/LogUtil"
+import log from "loglevel"
 import LogLevelEnum from "~/src/logConstants"
 
-describe("test log", () => {
-  it("test default log", function () {
-    const logger = LogUtil.defaultLogFactory().getLogger()
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
+/**
+ * 自定义日志工厂
+ *
+ * @author terwer
+ * @since 1.0.7
+ */
+class CustomLogFactory extends LogFactory {
+  constructor(level?: LogLevelEnum, sign?: string) {
+    super(level, sign)
+  }
 
-  it("test custom log level", function () {
-    const logger = LogUtil.customLogFactory(
-      LogLevelEnum.LOG_LEVEL_DEBUG
-    ).getLogger("test")
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
+  getLogger(loggerName?: string): log.Logger {
+    return super.getLogger(loggerName)
+  }
+}
 
-  it("test custom sign", function () {
-    const logger = LogUtil.customLogFactory(
-      LogLevelEnum.LOG_LEVEL_DEBUG,
-      "my-log"
-    ).getLogger("test")
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
-})
+export default CustomLogFactory

@@ -14,40 +14,37 @@ a simple logger for Node
 Default devel is INFO
 
 ```js
-const logFactory = new LogFactory()
-const logger = logFactory.getLogger("test")
+const logger = LogUtil.defaultLogFactory().getLogger()
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")
 
-// [zhi] [20:43:36] INFO test : This is info log
-// [zhi] [20:43:36] ERROR test : This is error log
+// [zhi] [11:26:51] INFO /Users/terwer/Documents/mydocs/zhi-log/test/log.test.ts:33:48 : This is info log
+// [zhi] [11:26:51] ERROR /Users/terwer/Documents/mydocs/zhi-log/test/log.test.ts:33:48 : This is error log
 ```
 
 You can set a custom log level
 
 ```js
-const logFactory = new LogFactory("DEBUG")
-const logger = logFactory.getLogger("test")
+const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG).getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")
 
-// [zhi] [20:43:59] DEBUG test : This is debug log
-// [zhi] [20:43:59] INFO test : This is info log
-// [zhi] [20:43:59] ERROR test : This is error log
+// [zhi] [11:28:15] DEBUG test : This is debug log
+// [zhi] [11:28:15] INFO test : This is info log
+// [zhi] [11:28:15] ERROR test : This is error log
 ```
 
 You can also set a custom prefix sign
 
 ```js
-const logFactory = new LogFactory("DEBUG", "my-log")
-const logger = logFactory.getLogger("test")
+const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG, "my-log").getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
 logger.error("This is error log")
 
-// [my-log] [20:46:06] DEBUG test : This is debug log
-// [my-log] [20:46:06] INFO test : This is info log
-// [my-log] [20:46:06] ERROR test : This is error log
+// [my-log] [11:29:04] DEBUG test : This is debug log
+// [my-log] [11:29:04] INFO test : This is info log
+// [my-log] [11:29:04] ERROR test : This is error log
 ```

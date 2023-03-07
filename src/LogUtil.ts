@@ -23,35 +23,30 @@
  * questions.
  */
 
-import { describe, it } from "vitest"
-import LogFactory from "~/src/logFactory"
-import LogUtil from "~/src/LogUtil"
+import DefaultLogFactory from "~/src/defaultLogFactory"
+import CustomLogFactory from "~/src/customLogFactory"
 import LogLevelEnum from "~/src/logConstants"
 
-describe("test log", () => {
-  it("test default log", function () {
-    const logger = LogUtil.defaultLogFactory().getLogger()
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
+/**
+ * 日志工具类
+ *
+ * @author terwer
+ * @since 1.0.7
+ */
+class LogUtil {
+  /**
+   * 默认日志工厂
+   */
+  public static defaultLogFactory() {
+    return new DefaultLogFactory()
+  }
 
-  it("test custom log level", function () {
-    const logger = LogUtil.customLogFactory(
-      LogLevelEnum.LOG_LEVEL_DEBUG
-    ).getLogger("test")
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
+  /**
+   * 自定义日志工厂
+   */
+  public static customLogFactory(level?: LogLevelEnum, sign?: string) {
+    return new CustomLogFactory(level, sign)
+  }
+}
 
-  it("test custom sign", function () {
-    const logger = LogUtil.customLogFactory(
-      LogLevelEnum.LOG_LEVEL_DEBUG,
-      "my-log"
-    ).getLogger("test")
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
-})
+export default LogUtil
