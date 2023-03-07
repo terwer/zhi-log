@@ -9,3 +9,4 @@ src/**/*.map
 script/__pycache__
 script/venv
 temp
+coverage
