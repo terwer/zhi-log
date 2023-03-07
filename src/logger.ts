@@ -22,42 +22,63 @@
  * or visit www.terwer.space if you need additional information or have any
  * questions.
  */
-
-import LogLevelEnum from "~/src/logConstants"
-import Log from "~/src/log"
-import dotenv from "dotenv"
-import DefaultLogger from "~/src/logger"
+import { Logger } from "loglevel"
 
 /**
- * 日志记录工厂
+ * 默认日志记录器
  *
  * @public
  * @author terwer
- * @since 1.0.0
+ * @since 1.0.7
  */
-abstract class LogFactory {
-  private log
+interface DefaultLogger extends Logger {
+  /**
+   * 日志颜色
+   */
+  colors?: string[]
 
   /**
-   * 默认日志级别
+   * Output trace message to console.
+   * This will also include a full stack trace
    *
-   * @param level - 可选，未设置默认INFO
-   * @param sign - 可选前缀，默认zhi
+   * @param msg - any data to log to the console
    */
-  constructor(level?: LogLevelEnum, sign?: string) {
-    dotenv.config()
-    this.log = new Log(level ?? LogLevelEnum.LOG_LEVEL_INFO, sign)
-  }
+  trace(...msg: any[]): void
 
   /**
-   * 获取日志记录器
+   * Output debug message to console including appropriate icons
    *
-   * @param loggerName - 日志记录器名称
-   * @protected
+   * @param msg - any data to log to the console
    */
-  protected getLogger(loggerName: string): DefaultLogger {
-    return this.log.getLogger(loggerName)
-  }
+  debug(...msg: any[]): void
+
+  /**
+   * Output debug message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  log(...msg: any[]): void
+
+  /**
+   * Output info message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  info(...msg: any[]): void
+
+  /**
+   * Output warn message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  warn(...msg: any[]): void
+
+  /**
+   * Output error message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  error(...msg: any[]): void
 }
 
-export default LogFactory
+export default DefaultLogger

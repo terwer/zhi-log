@@ -24,11 +24,7 @@
  */
 
 import { describe, it } from "vitest"
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import LogUtil from "~/lib/index"
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { LogLevelEnum } from "~/lib/index"
 
 describe("test dist", () => {

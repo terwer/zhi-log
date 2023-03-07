@@ -24,7 +24,7 @@
  */
 
 import LogFactory from "~/src/factory/logFactory"
-import log from "loglevel"
+import DefaultLogger from "~/src/logger"
 
 /**
  * 默认日志工厂
@@ -48,7 +48,11 @@ class DefaultLogFactory extends LogFactory {
     }
   }
 
-  getLogger(): log.Logger {
+  /**
+   * 获取日志记录器
+   */
+
+  getLogger(): DefaultLogger {
     const callerName = this.callerName()
     return super.getLogger(callerName)
   }
