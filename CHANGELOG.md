@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/terwer/zhi-log/compare/v1.3.0...v1.4.0) (2023-03-07)
+
+
+### Features
+
+* fix dts path ([422459e](https://github.com/terwer/zhi-log/commit/422459e520d3c4f6ed2d4e0428924004d8429cca))
+
 ## [1.3.0](https://github.com/terwer/zhi-log/compare/v1.2.7...v1.3.0) (2023-03-07)
 
 
