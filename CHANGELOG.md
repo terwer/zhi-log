@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.4](https://github.com/terwer/zhi-log/compare/v1.2.3...v1.2.4) (2023-03-07)
+
+
+### Bug Fixes
+
+* add api-extractor ([840ae1e](https://github.com/terwer/zhi-log/commit/840ae1e82a60777ac1177582d1c85dd7eb357033))
+* add api-extractor ([42f8261](https://github.com/terwer/zhi-log/commit/42f8261c74e73a07cb1a6825167490971ed769eb))
+* change ci command ([71d20c9](https://github.com/terwer/zhi-log/commit/71d20c9a396166f82d29bccd5f76c2068029ea5b))
+* fix tests ([15e6af6](https://github.com/terwer/zhi-log/commit/15e6af633dc50e5f6a80f23692a74307292d9e60))
+* fix tests ([3107727](https://github.com/terwer/zhi-log/commit/310772747be3c8f78e6c12577c85618590f75acc))
+
 ## [1.2.3](https://github.com/terwer/zhi-log/compare/v1.2.2...v1.2.3) (2023-03-07)
 
 
