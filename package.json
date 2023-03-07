@@ -6,7 +6,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/zhi-log.umd.cjs",
+  "main": "./dist/zhi-log.js",
   "module": "./dist/zhi-log.js",
   "exports": {
     ".": {

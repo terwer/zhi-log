@@ -14,6 +14,8 @@ a simple logger for Node
 Default devel is INFO
 
 ```js
+import LogUtil from "zhi-log"
+
 const logger = LogUtil.defaultLogFactory().getLogger()
 logger.debug("This is debug log")
 logger.info("This is info log")
@@ -26,6 +28,8 @@ logger.error("This is error log")
 You can set a custom log level
 
 ```js
+import LogUtil from "zhi-log"
+
 const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG).getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
@@ -39,6 +43,8 @@ logger.error("This is error log")
 You can also set a custom prefix sign
 
 ```js
+import LogUtil from "zhi-log"
+
 const logger = LogUtil.customLogFactory(LogLevelEnum.LOG_LEVEL_DEBUG, "my-log").getLogger("test")
 logger.debug("This is debug log")
 logger.info("This is info log")
