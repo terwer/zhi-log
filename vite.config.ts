@@ -16,16 +16,14 @@ export default defineConfig({
   build: {
     outDir: "lib",
     lib: {
-      entry: [
-        path.resolve(__dirname, "src/index.ts"),
-        path.resolve(__dirname, "src/logConstants.ts"),
-      ],
-      name: "ZhiLog",
+      entry: [path.resolve(__dirname, "src/index.ts")],
       formats: ["es", "cjs"],
-      // fileName: "index",
     },
     rollupOptions: {
       external: ["path"],
+      output: {
+        exports: "named",
+      },
     },
   },
 })

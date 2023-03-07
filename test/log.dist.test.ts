@@ -25,7 +25,7 @@
 
 import { describe, it } from "vitest"
 import LogUtil from "~/lib/index"
-import { LogLevelEnum } from "~/lib/logConstants"
+import { LogLevelEnum } from "~/lib/index"
 
 describe("test dist", () => {
   it("test log", function () {
