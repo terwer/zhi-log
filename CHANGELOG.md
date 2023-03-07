@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/terwer/zhi-log/compare/v1.2.2...v1.2.3) (2023-03-07)
+
+
+### Bug Fixes
+
+* fix dts path ([0fab013](https://github.com/terwer/zhi-log/commit/0fab0137ab261f9756c4d0fd865a585d72a1508a))
+
 ## [1.2.2](https://github.com/terwer/zhi-log/compare/v1.2.1...v1.2.2) (2023-03-07)
 
 
