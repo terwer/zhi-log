@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.2](https://github.com/terwer/zhi-log/compare/v1.2.1...v1.2.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* add typings ([5036ce9](https://github.com/terwer/zhi-log/commit/5036ce945e653b65ff8f222ea28168df55eff511))
+* add typings for test ([588ce8a](https://github.com/terwer/zhi-log/commit/588ce8a637252808d74b79c7937679520c0b9a08))
+* fix entry name ([f7a047e](https://github.com/terwer/zhi-log/commit/f7a047e2fc321d1464f54b0644a1507818bcbce9))
+
 ## [1.2.1](https://github.com/terwer/zhi-log/compare/v1.2.0...v1.2.1) (2023-03-07)
 
 
