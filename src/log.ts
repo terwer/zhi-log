@@ -25,7 +25,7 @@
 
 import loglevel, { Logger } from "loglevel"
 import prefix from "loglevel-plugin-prefix"
-import LogLevelEnum from "~/src/logConstants"
+import { LogLevelEnum } from "~/src/logConstants"
 
 /**
  * 日志工具类

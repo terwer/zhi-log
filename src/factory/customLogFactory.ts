@@ -23,34 +23,25 @@
  * questions.
  */
 
-import LogFactory from "~/src/logFactory"
+import LogFactory from "~/src/factory/logFactory"
 import log from "loglevel"
+import { LogLevelEnum } from "~/src/logConstants"
 
 /**
- * 默认日志工厂
+ * 自定义日志工厂
  *
+ * @public
  * @author terwer
  * @since 1.0.7
  */
-class DefaultLogFactory extends LogFactory {
-  private callerName() {
-    try {
-      throw new Error()
-    } catch (e) {
-      try {
-        let caller = e.stack.split("at ")[3].split(" ")[0]
-        caller = caller.trim().replace(/\s+/g, "")
-        return caller
-      } catch (e) {
-        return undefined
-      }
-    }
+class CustomLogFactory extends LogFactory {
+  constructor(level?: LogLevelEnum, sign?: string) {
+    super(level, sign)
   }
 
-  getLogger(): log.Logger {
-    let callerName = this.callerName()
-    return super.getLogger(callerName)
+  getLogger(loggerName?: string): log.Logger {
+    return super.getLogger(loggerName ?? "")
   }
 }
 
-export default DefaultLogFactory
+export default CustomLogFactory

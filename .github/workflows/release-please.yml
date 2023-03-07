@@ -32,6 +32,9 @@ jobs:
       # Build output
       - run: pnpm build
         if: ${{ steps.release.outputs.release_created }}
+      # Extract typings
+      - run: pnpm typings
+        if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
       - run: npm publish
         env:

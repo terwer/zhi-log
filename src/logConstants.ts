@@ -28,12 +28,11 @@
  *
  * @author terwer
  * @since 1.0.7
+ * @public
  */
-enum LogLevelEnum {
+export enum LogLevelEnum {
   LOG_LEVEL_DEBUG = "DEBUG",
   LOG_LEVEL_INFO = "INFO",
   LOG_LEVEL_WARN = "WARN",
   LOG_LEVEL_ERROR = "ERROR",
 }
-
-export default LogLevelEnum

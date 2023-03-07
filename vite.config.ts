@@ -2,8 +2,8 @@ import path from "path"
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
 
-export const commonConfig = {
-  base: "./",
+export default defineConfig({
+  plugins: [dts()],
   resolve: {
     alias: [
       {
@@ -12,21 +12,17 @@ export const commonConfig = {
       },
     ],
   },
-}
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  ...commonConfig,
-  plugins: [dts()],
   build: {
+    outDir: "lib",
     lib: {
-      entry: [
-        path.resolve(__dirname, "src/logUtil.ts"),
-        path.resolve(__dirname, "src/logConstants.ts"),
-      ],
+      entry: [path.resolve(__dirname, "src/index.ts")],
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       external: ["path"],
+      output: {
+        exports: "named",
+      },
     },
   },
 })
