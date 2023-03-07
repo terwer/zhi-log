@@ -1,4 +1,8 @@
-import log from "loglevel"
+/**
+ * @packageDocumentation
+ * This is the documentation for my package.
+ */
+
 import { Logger } from "loglevel"
 
 /**
@@ -10,7 +14,12 @@ import { Logger } from "loglevel"
  */
 export declare class CustomLogFactory extends LogFactory {
   constructor(level?: LogLevelEnum, sign?: string)
-  getLogger(loggerName?: string): log.Logger
+  /**
+   * 获取默认的日志记录器
+   *
+   * @param loggerName - 日志记录器名称
+   */
+  getLogger(loggerName?: string): DefaultLogger
 }
 
 /**
@@ -22,7 +31,60 @@ export declare class CustomLogFactory extends LogFactory {
  */
 export declare class DefaultLogFactory extends LogFactory {
   private callerName
-  getLogger(): log.Logger
+  /**
+   * 获取日志记录器
+   */
+  getLogger(): DefaultLogger
+}
+
+/**
+ * 默认日志记录器
+ *
+ * @author terwer
+ * @since 1.0.7
+ */
+export declare interface DefaultLogger extends Logger {
+  /**
+   * 日志颜色
+   */
+  colors?: string[]
+  /**
+   * Output trace message to console.
+   * This will also include a full stack trace
+   *
+   * @param msg - any data to log to the console
+   */
+  trace(...msg: any[]): void
+  /**
+   * Output debug message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  debug(...msg: any[]): void
+  /**
+   * Output debug message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  log(...msg: any[]): void
+  /**
+   * Output info message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  info(...msg: any[]): void
+  /**
+   * Output warn message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  warn(...msg: any[]): void
+  /**
+   * Output error message to console including appropriate icons
+   *
+   * @param msg - any data to log to the console
+   */
+  error(...msg: any[]): void
 }
 
 /**
@@ -41,10 +103,14 @@ export declare abstract class LogFactory {
    * @param sign - 可选前缀，默认zhi
    */
   constructor(level?: LogLevelEnum, sign?: string)
-  protected getLogger(loggerName: string): Logger
+  /**
+   * 获取日志记录器
+   *
+   * @param loggerName - 日志记录器名称
+   * @protected
+   */
+  protected getLogger(loggerName: string): DefaultLogger
 }
-
-export { Logger }
 
 /**
  * 日志级别
@@ -54,9 +120,21 @@ export { Logger }
  * @public
  */
 export declare enum LogLevelEnum {
+  /**
+   * DEBUG
+   */
   LOG_LEVEL_DEBUG = "DEBUG",
+  /**
+   * INFO
+   */
   LOG_LEVEL_INFO = "INFO",
+  /**
+   * WARN
+   */
   LOG_LEVEL_WARN = "WARN",
+  /**
+   * ERROR
+   */
   LOG_LEVEL_ERROR = "ERROR",
 }
 
@@ -72,7 +150,10 @@ declare class LogUtil {
    * 默认日志工厂
    */
   static defaultLogFactory(): DefaultLogFactory
-  static defaultLogger(): Logger
+  /**
+   * 默认日志记录器
+   */
+  static defaultLogger(): DefaultLogger
   /**
    * 自定义日志工厂
    */

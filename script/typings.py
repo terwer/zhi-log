@@ -12,9 +12,12 @@ if __name__ == "__main__":
 
     scriptutils.mkdir("./etc")
     scriptutils.mkdir("./typings")
-    os.system("tsc")
+    os.system("tsc -p .")
     # os.system("api-extractor run --local --diagnostics")
     os.system("api-extractor run --local")
     os.system("pnpm prettier")
     os.system("pnpm lint")
+    os.system("rm ./src/*.d.ts")
+    os.system("rm ./src/*.map")
+    os.system("rm ./src/*.js")
     print("compile finished.")

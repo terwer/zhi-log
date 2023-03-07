@@ -1,8 +1,13 @@
+/**
+ * @packageDocumentation
+ * This is the documentation for my package.
+ */
+
 import LogFactory from "~/src/factory/logFactory"
 import DefaultLogFactory from "~/src/factory/defaultLogFactory"
 import CustomLogFactory from "~/src/factory/customLogFactory"
-import { LogLevelEnum } from "~/src/logConstants"
-import { Logger } from "loglevel"
+import LogLevelEnum from "~/src/logConstants"
+import DefaultLogger from "~/src/logger"
 
 /**
  * 日志工具类
@@ -19,7 +24,10 @@ class LogUtil {
     return new DefaultLogFactory()
   }
 
-  public static defaultLogger(): Logger {
+  /**
+   * 默认日志记录器
+   */
+  public static defaultLogger(): DefaultLogger {
     return LogUtil.defaultLogFactory().getLogger()
   }
 
@@ -33,4 +41,4 @@ class LogUtil {
 
 export default LogUtil
 export { LogLevelEnum, LogFactory, CustomLogFactory, DefaultLogFactory }
-export type { Logger }
+export type { DefaultLogger }

@@ -17,6 +17,11 @@
       "tagName": "@since",
       "syntaxKind": "block",
       "allowMultiple": false
+    },
+    {
+      "tagName": "@protected",
+      "syntaxKind": "block",
+      "allowMultiple": false
     }
   ],
 
@@ -24,6 +29,7 @@
     // Indicate that the custom tag is supported by your tooling.  (Without this, warnings may
     // be reported saying that the tag is unsupported.)
     "@author": true,
-    "@since": true
+    "@since": true,
+    "@protected": true
   }
 }

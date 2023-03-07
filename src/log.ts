@@ -23,9 +23,10 @@
  * questions.
  */
 
-import loglevel, { Logger } from "loglevel"
+import loglevel from "loglevel"
 import prefix from "loglevel-plugin-prefix"
-import { LogLevelEnum } from "~/src/logConstants"
+import LogLevelEnum from "~/src/logConstants"
+import DefaultLogger from "~/src/logger"
 
 /**
  * 日志工具类
@@ -121,8 +122,9 @@ class Log {
    * @author terwer
    * @since 1.0.0
    */
-  public getLogger = (loggerName?: string): Logger =>
-    loglevel.getLogger(loggerName ?? this.consoleLogger)
+  public getLogger = (loggerName?: string): DefaultLogger => {
+    return loglevel.getLogger(loggerName ?? this.consoleLogger) as DefaultLogger
+  }
 }
 
 export default Log

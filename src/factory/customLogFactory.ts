@@ -24,8 +24,8 @@
  */
 
 import LogFactory from "~/src/factory/logFactory"
-import log from "loglevel"
-import { LogLevelEnum } from "~/src/logConstants"
+import LogLevelEnum from "~/src/logConstants"
+import DefaultLogger from "~/src/logger"
 
 /**
  * 自定义日志工厂
@@ -39,7 +39,12 @@ class CustomLogFactory extends LogFactory {
     super(level, sign)
   }
 
-  getLogger(loggerName?: string): log.Logger {
+  /**
+   * 获取默认的日志记录器
+   *
+   * @param loggerName - 日志记录器名称
+   */
+  getLogger(loggerName?: string): DefaultLogger {
     return super.getLogger(loggerName ?? "")
   }
 }
