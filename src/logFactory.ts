@@ -26,7 +26,7 @@
 import { Logger } from "loglevel"
 import LogLevelEnum from "~/src/logConstants"
 import Log from "~/src/log"
-import DefaultLogFactory from "~/src/defaultLogFactory"
+import * as dotenv from "dotenv"
 
 /**
  * 日志记录工厂
@@ -44,6 +44,7 @@ abstract class LogFactory {
    * @param sign 可选前缀，默认zhi
    */
   constructor(level?: LogLevelEnum, sign?: string) {
+    dotenv.config()
     this.log = new Log(level, sign)
   }
 

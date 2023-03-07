@@ -1,6 +1,6 @@
 # zhi-log
 
-a simple logger for Node 
+a simple logger for Node
 
 ## Features
 
@@ -47,4 +47,11 @@ logger.error("This is error log")
 // [my-log] [11:29:04] DEBUG test : This is debug log
 // [my-log] [11:29:04] INFO test : This is info log
 // [my-log] [11:29:04] ERROR test : This is error log
+```
+
+Also, if you config LOG_LEVEL in your project's `.env` file, it will work
+
+```
+LOG_LEVEL=DEBUG
+DEFAUT_LOGGER=zhi
 ```

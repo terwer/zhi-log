@@ -36,6 +36,16 @@ import LogLevelEnum from "~/src/logConstants"
 class Log {
   private consoleLogger = "console"
 
+  stringToEnumValue = <T extends Record<string, string>, K extends keyof T>(
+    enumObj: T,
+    value: string
+  ): T[keyof T] | undefined =>
+    enumObj[
+      Object.keys(enumObj).filter(
+        (k) => enumObj[k as K].toString() === value
+      )[0] as keyof typeof enumObj
+    ]
+
   constructor(level: LogLevelEnum, sign?: string) {
     // polyfill due to https://github.com/vitejs/vite/issues/7385
     const chalk = {
@@ -54,15 +64,28 @@ class Log {
     }
 
     prefix.reg(loglevel)
+    let customLevel
     if (level) {
-      loglevel.setLevel(level)
+      customLevel = level
     } else {
-      loglevel.setLevel(LogLevelEnum.LOG_LEVEL_INFO)
+      const envLevel = process.env.LOG_LEVEL
+        ? this.stringToEnumValue(
+            LogLevelEnum,
+            process.env.LOG_LEVEL.toUpperCase()
+          )
+        : LogLevelEnum.LOG_LEVEL_INFO
+      if (!envLevel) {
+        console.warn(
+          "[zhi-log] LOG_LEVEL is invalid in you .env file.Must be either debug, info, warn or error, fallback to default info level"
+        )
+      }
+      customLevel = envLevel ?? LogLevelEnum.LOG_LEVEL_INFO
     }
+    loglevel.setLevel(customLevel)
 
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        let defaultSign = sign ?? "zhi"
+        let defaultSign = sign ?? process.env.DEFAULT_LOGGER ?? "zhi"
         const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")
