@@ -4,6 +4,7 @@ import dts from "vite-plugin-dts"
 import path from "path"
 
 export default defineConfig({
+  plugins: [dts()],
   resolve: {
     alias: [
       {
@@ -15,11 +16,16 @@ export default defineConfig({
   build: {
     outDir: "lib",
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: [
+        path.resolve(__dirname, "src/index.ts"),
+        path.resolve(__dirname, "src/logConstants.ts"),
+      ],
       name: "ZhiLog",
       formats: ["es", "cjs"],
-      fileName: "index",
+      // fileName: "index",
+    },
+    rollupOptions: {
+      external: ["path"],
     },
   },
-  plugins: [dts()],
 })

@@ -23,24 +23,35 @@
  * questions.
  */
 
-import LogFactory from "~/src/logFactory"
-import log from "loglevel"
+import { Logger } from "loglevel"
 import { LogLevelEnum } from "~/src/logConstants"
+import Log from "~/src/log"
+import * as dotenv from "dotenv"
 
 /**
- * 自定义日志工厂
+ * 日志记录工厂
  *
+ * @public
  * @author terwer
- * @since 1.0.7
+ * @since 1.0.0
  */
-class CustomLogFactory extends LogFactory {
+abstract class LogFactory {
+  private log
+
+  /**
+   * 默认日志级别
+   *
+   * @param level - 可选，未设置默认INFO
+   * @param sign - 可选前缀，默认zhi
+   */
   constructor(level?: LogLevelEnum, sign?: string) {
-    super(level, sign)
+    dotenv.config()
+    this.log = new Log(level ?? LogLevelEnum.LOG_LEVEL_INFO, sign)
   }
 
-  getLogger(loggerName?: string): log.Logger {
-    return super.getLogger(loggerName ?? "")
+  protected getLogger(loggerName: string): Logger {
+    return this.log.getLogger(loggerName)
   }
 }
 
-export default CustomLogFactory
+export default LogFactory

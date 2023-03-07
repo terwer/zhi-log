@@ -1,10 +1,12 @@
-import DefaultLogFactory from "~/src/defaultLogFactory"
-import CustomLogFactory from "~/src/customLogFactory"
+import LogFactory from "~/src/factory/logFactory"
+import DefaultLogFactory from "~/src/factory/defaultLogFactory"
+import CustomLogFactory from "~/src/factory/customLogFactory"
 import { LogLevelEnum } from "~/src/logConstants"
 
 /**
  * 日志工具类
  *
+ * @public
  * @author terwer
  * @since 1.0.7
  */
@@ -25,3 +27,4 @@ class LogUtil {
 }
 
 export default LogUtil
+export { LogLevelEnum, LogFactory, CustomLogFactory, DefaultLogFactory }

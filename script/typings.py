@@ -13,5 +13,5 @@ if __name__ == "__main__":
     scriptutils.mkdir("./etc")
     os.system("tsc")
     # os.system("api-extractor run --local --diagnostics")
-    os.system("api-extractor run")
+    os.system("api-extractor run --local")
     print("compile finished.")

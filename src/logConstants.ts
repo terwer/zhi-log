@@ -28,6 +28,7 @@
  *
  * @author terwer
  * @since 1.0.7
+ * @public
  */
 export enum LogLevelEnum {
   LOG_LEVEL_DEBUG = "DEBUG",

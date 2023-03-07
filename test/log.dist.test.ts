@@ -24,10 +24,8 @@
  */
 
 import { describe, it } from "vitest"
-// @ts-ignore
-import LogUtil from "dist/logUtil"
-// @ts-ignore
-import LogLevelEnum from "dist/logConstants"
+import LogUtil from "~/lib/index"
+import { LogLevelEnum } from "~/lib/logConstants"
 
 describe("test dist", () => {
   it("test log", function () {

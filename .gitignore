@@ -2,11 +2,10 @@
 node_modules
 lib
 dist
-etc
 .env
-src/*.d.ts
-src/*.js
-src/*.map
+src/**/*.d.ts
+src/**/*.js
+src/**/*.map
 script/__pycache__
 script/venv
 temp
