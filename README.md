@@ -2,6 +2,8 @@
 
 a simple logger for Node
 
+[api-docs](etc/zhi-log.api.md)
+
 ## Features
 
 - 100% compatible with console

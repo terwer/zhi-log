@@ -18,7 +18,7 @@
   },
   "typings": "./dist/zhi-log.d.ts",
   "scripts": {
-    "build": "vite build",
+    "build": "python script/build.py",
     "test": "vitest",
     "typings": "python script/typings.py",
     "package": "pnpm build && pnpm typings"
