@@ -8,22 +8,23 @@
     "dist",
     "etc"
   ],
-  "main": "./index/index.js",
-  "module": "./index/index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "exports": {
     ".": {
       "import": "./lib/index.js",
       "require": "./lib/index.cjs"
     }
   },
-  "typings": "./lib/zhi-log.d.ts",
+  "typings": "./dist/zhi-log.d.ts",
   "scripts": {
     "build": "python script/build.py",
     "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint --ext .ts ./ --ignore-pattern *.d.ts --fix",
     "prettier": "prettier --write .",
     "typings": "python script/typings.py",
-    "package": "pnpm build && pnpm typings"
+    "package": "pnpm build && pnpm typings && pnpm coverage"
   },
   "keywords": [
     "log",
@@ -37,6 +38,7 @@
     "@microsoft/api-extractor": "^7.34.4",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "@vitest/coverage-c8": "^0.29.2",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "prettier": "^2.8.4",
