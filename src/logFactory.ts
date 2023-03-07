@@ -24,7 +24,7 @@
  */
 
 import { Logger } from "loglevel"
-import LogLevelEnum from "~/src/logConstants"
+import { LogLevelEnum } from "~/src/logConstants"
 import Log from "~/src/log"
 import * as dotenv from "dotenv"
 
@@ -45,7 +45,7 @@ abstract class LogFactory {
    */
   constructor(level?: LogLevelEnum, sign?: string) {
     dotenv.config()
-    this.log = new Log(level, sign)
+    this.log = new Log(level ?? LogLevelEnum.LOG_LEVEL_INFO, sign)
   }
 
   protected getLogger(loggerName: string): Logger {

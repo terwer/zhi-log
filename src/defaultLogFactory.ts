@@ -36,7 +36,7 @@ class DefaultLogFactory extends LogFactory {
   private callerName() {
     try {
       throw new Error()
-    } catch (e) {
+    } catch (e: any) {
       try {
         let caller = e.stack.split("at ")[3].split(" ")[0]
         caller = caller.trim().replace(/\s+/g, "")

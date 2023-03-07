@@ -25,7 +25,7 @@
 
 import LogFactory from "~/src/logFactory"
 import log from "loglevel"
-import LogLevelEnum from "~/src/logConstants"
+import { LogLevelEnum } from "~/src/logConstants"
 
 /**
  * 自定义日志工厂
@@ -39,7 +39,7 @@ class CustomLogFactory extends LogFactory {
   }
 
   getLogger(loggerName?: string): log.Logger {
-    return super.getLogger(loggerName)
+    return super.getLogger(loggerName ?? "")
   }
 }
 

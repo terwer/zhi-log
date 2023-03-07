@@ -4,20 +4,24 @@
   "description": "a simple logger for Node",
   "type": "module",
   "files": [
-    "dist"
+    "lib",
+    "dist",
+    "etx"
   ],
-  "main": "./dist/logUtil.js",
-  "module": "./dist/logUtil.js",
+  "main": "./index/index.js",
+  "module": "./index/index.js",
   "exports": {
     ".": {
-      "import": "./dist/logUtil.js",
-      "require": "./dist/logUtil.cjs"
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
     }
   },
+  "typings": "./dist/zhi-log.d.ts",
   "scripts": {
     "build": "vite build",
     "test": "vitest",
-    "typings": "sh typings.sh"
+    "typings": "python script/typings.py",
+    "package": "pnpm build && pnpm typings"
   },
   "keywords": [
     "log",
@@ -28,6 +32,7 @@
   "repository": "terwer/zhi-log",
   "homepage": "https://terwer.space",
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.34.4",
     "prettier": "^2.8.4",
     "vite": "^4.1.4",
     "vite-plugin-dts": "^2.0.2",

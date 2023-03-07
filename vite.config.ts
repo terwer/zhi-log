@@ -1,9 +1,9 @@
-import path from "path"
+import { resolve } from "path"
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
+import path from "path"
 
-export const commonConfig = {
-  base: "./",
+export default defineConfig({
   resolve: {
     alias: [
       {
@@ -12,21 +12,14 @@ export const commonConfig = {
       },
     ],
   },
-}
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  ...commonConfig,
-  plugins: [dts()],
   build: {
+    outDir: "lib",
     lib: {
-      entry: [
-        path.resolve(__dirname, "src/logUtil.ts"),
-        path.resolve(__dirname, "src/logConstants.ts"),
-      ],
-    },
-    rollupOptions: {
-      external: ["path"],
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "ZhiLog",
+      formats: ["es", "cjs"],
+      fileName: "index",
     },
   },
+  plugins: [dts()],
 })
