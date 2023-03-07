@@ -5,7 +5,7 @@
   "type": "module",
   "files": [
     "lib",
-    "dist",
+    "typings",
     "etc"
   ],
   "main": "./lib/index.js",
