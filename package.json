@@ -8,15 +8,15 @@
     "dist",
     "etc"
   ],
-  "main": "./index/index.js",
-  "module": "./index/index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "exports": {
     ".": {
       "import": "./lib/index.js",
       "require": "./lib/index.cjs"
     }
   },
-  "typings": "./lib/zhi-log.d.ts",
+  "typings": "./dist/zhi-log.d.ts",
   "scripts": {
     "build": "python script/build.py",
     "test": "vitest",
