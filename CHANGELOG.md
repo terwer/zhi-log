@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/terwer/zhi-log/compare/v1.2.7...v1.3.0) (2023-03-07)
+
+
+### Features
+
+* add docs ([192623f](https://github.com/terwer/zhi-log/commit/192623f876e4947e2d02dfbc0ac79a164ccbb219))
+
+
+### Bug Fixes
+
+* add custom logger ([6603adb](https://github.com/terwer/zhi-log/commit/6603adb624c741807f31b8cdedee9a2a9c7a112e))
+* add dts to npm ([60221b7](https://github.com/terwer/zhi-log/commit/60221b7374af3985aa65bc49332121d34cc49ca9))
+
 ## [1.2.7](https://github.com/terwer/zhi-log/compare/v1.2.6...v1.2.7) (2023-03-07)
 
 
