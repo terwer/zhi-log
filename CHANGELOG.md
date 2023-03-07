@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.6](https://github.com/terwer/zhi-log/compare/v1.2.5...v1.2.6) (2023-03-07)
+
+
+### Bug Fixes
+
+* add coverage ([5b79183](https://github.com/terwer/zhi-log/commit/5b79183593cb2e0d988c90ba21429f4f2b17a39b))
+* fix entry ([d816eae](https://github.com/terwer/zhi-log/commit/d816eaec72d1d90f825fc11d8b7b5d6a9b3c8876))
+
 ## [1.2.5](https://github.com/terwer/zhi-log/compare/v1.2.4...v1.2.5) (2023-03-07)
 
 

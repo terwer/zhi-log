@@ -1,6 +1,6 @@
 {
   "name": "zhi-log",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "a simple logger for Node",
   "type": "module",
   "files": [
