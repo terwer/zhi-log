@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/terwer/zhi-log/compare/v1.1.0...v1.2.0) (2023-03-07)
+
+
+### Features
+
+* Add dotenv support ([b45374b](https://github.com/terwer/zhi-log/commit/b45374b536cf0cc7de99152437a774d8f77b0574))
+
 ## [1.1.0](https://github.com/terwer/zhi-log/compare/v1.0.7...v1.1.0) (2023-03-07)
 
 
