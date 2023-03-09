@@ -24,13 +24,13 @@
  */
 
 import { describe, it } from "vitest"
-import LogUtil from "~/src/index"
+import LogFactory from "~/src/index"
 import LogLevelEnum from "~/src/logConstants"
 import Env from "zhi-env"
 
 describe("test log", () => {
   it("test default log", function () {
-    const logger = LogUtil.defaultLogger()
+    const logger = LogFactory.defaultLogger()
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")
@@ -38,28 +38,28 @@ describe("test log", () => {
 
   it("test default log env", function () {
     const env = new Env(import.meta.env)
-    const logger = LogUtil.defaultLogger(env)
+    const logger = LogFactory.defaultLogger(env, 3)
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")
   })
 
   it("test custom sign", function () {
-    const logger = LogUtil.customSignLogFactory("haha").getLogger()
+    const logger = LogFactory.customSignLogFactory("haha").getLogger()
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")
   })
 
   it("test custom logger", function () {
-    const logger = LogUtil.customLogFactory().getLogger("haha")
+    const logger = LogFactory.customLogFactory().getLogger("haha")
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")
   })
 
   it("test custom log level", function () {
-    const logger = LogUtil.customLogFactory(
+    const logger = LogFactory.customLogFactory(
       LogLevelEnum.LOG_LEVEL_DEBUG
     ).getLogger("test")
     logger.debug("This is debug log")
@@ -68,7 +68,7 @@ describe("test log", () => {
   })
 
   it("test custom level and sign", function () {
-    const logger = LogUtil.customLogFactory(
+    const logger = LogFactory.customLogFactory(
       LogLevelEnum.LOG_LEVEL_DEBUG,
       "my-log"
     ).getLogger("test")
