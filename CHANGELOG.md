@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.5.0](https://github.com/terwer/zhi-log/compare/v1.4.0...v1.5.0) (2023-03-09)
+
+
+### Features
+
+* Change project structure ([f4452a5](https://github.com/terwer/zhi-log/commit/f4452a5b71dc1b3294dabe280c1664651ec983b8))
+* Change project structure ([6ff990a](https://github.com/terwer/zhi-log/commit/6ff990a74b5c2dcf03013db309b1ffd43ef1a754))
+* fix env ([7cc64b6](https://github.com/terwer/zhi-log/commit/7cc64b680e8d8d20d1f1d9f1b5503dae887a52ee))
+
+
+### Bug Fixes
+
+* log level ([e548671](https://github.com/terwer/zhi-log/commit/e548671031762273dbc347536910a81c19cc11c8))
+
 ## [1.4.0](https://github.com/terwer/zhi-log/compare/v1.3.0...v1.4.0) (2023-03-07)
 
 ### Features
