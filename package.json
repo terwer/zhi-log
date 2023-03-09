@@ -1,7 +1,7 @@
 {
   "name": "zhi-log",
   "version": "1.5.1",
-  "description": "ts template lib for test",
+  "description": "a simple logger for Node and Browser",
   "files": [
     "lib",
     "typings"
