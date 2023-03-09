@@ -12,6 +12,7 @@ jobs:
         with:
           release-type: node
           package-name: release-please-action
+
       # Checkout
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
@@ -27,13 +28,7 @@ jobs:
           version: 7.29.0
         if: ${{ steps.release.outputs.release_created }}
       # Install dependencies
-      - run: pnpm install
-        if: ${{ steps.release.outputs.release_created }}
-      # Build output
-      - run: pnpm build
-        if: ${{ steps.release.outputs.release_created }}
-      # Extract typings
-      - run: pnpm typings
+      - run: pnpm package
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
       - run: npm publish
