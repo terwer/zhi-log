@@ -155,7 +155,7 @@ class Logger {
       }
     }
 
-    if (!loggerFrom || loggerFrom.trim() === "") {
+    if (!loggerFrom || loggerFrom.trim().length === 0) {
       loggerFrom = this.consoleLogger
     }
     return loglevel.getLogger(loggerFrom) as DefaultLogger
