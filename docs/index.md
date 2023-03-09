@@ -2,14 +2,14 @@
 layout: home
 
 hero:
-  name: xxx
-  text: xxx xxx
-  tagline: xx xx xx
+  name: zhi-log
+  text: a simple logger for Node and Browser
+  tagline: simple but powerful log framework
   actions:
     - theme: brand
       text: Get Started
       link: /doc/
     - theme: alt
       text: View on Git
-      link:
+      link: https://github.com/terwer/zhi-log
 ---

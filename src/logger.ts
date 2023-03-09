@@ -22,63 +22,138 @@
  * or visit www.terwer.space if you need additional information or have any
  * questions.
  */
-import { Logger } from "loglevel"
+
+import loglevel from "loglevel"
+import prefix from "loglevel-plugin-prefix"
+import LogLevelEnum from "~/src/logConstants"
+import callsites from "callsites"
+import EnvHelper from "~/src/envHelper"
+import Env from "zhi-env"
+import { DefaultLogger } from "~/typings"
 
 /**
- * 默认日志记录器
+ * 日志工具类
  *
- * @public
  * @author terwer
- * @since 1.0.7
+ * @since 1.0.0
  */
-interface DefaultLogger extends Logger {
-  /**
-   * 日志颜色
-   */
-  colors?: string[]
+class Logger {
+  private consoleLogger = "console"
+  private stackSize = 1
 
   /**
-   * Output trace message to console.
-   * This will also include a full stack trace
+   * 设置输出栈的深度，默认1
    *
-   * @param msg - any data to log to the console
+   * @param stackSize 栈的深度
    */
-  trace(...msg: any[]): void
+  public setStackSize(stackSize?: number): void {
+    this.stackSize = stackSize ?? 1
+  }
+
+  constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
+    // 级别
+    let customLevel = undefined
+    if (level) {
+      customLevel = level
+    } else {
+      customLevel = EnvHelper.getEnvLevel(env)
+    }
+    customLevel = customLevel ?? LogLevelEnum.LOG_LEVEL_INFO
+    loglevel.setLevel(customLevel)
+
+    // 颜色
+    // polyfill due to https://github.com/vitejs/vite/issues/7385
+    const chalk = {
+      gray: (src: any): string => {
+        return src.toString()
+      },
+      green: (src: any): string => {
+        return src.toString()
+      },
+      yellow: (src: any): string => {
+        return src.toString()
+      },
+      red: (src: any): string => {
+        return src.toString()
+      },
+    }
+    prefix.reg(loglevel)
+    prefix.apply(loglevel, {
+      format(level, name, timestamp) {
+        const defaultSign = sign ?? EnvHelper.getEnvLogger(env) ?? "zhi"
+        const strarr = ["[" + defaultSign + "]"]
+        strarr.push(
+          chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")
+        )
+
+        switch (level) {
+          case LogLevelEnum.LOG_LEVEL_DEBUG:
+            strarr.push(chalk.gray(level.toUpperCase().toString()))
+            break
+          case LogLevelEnum.LOG_LEVEL_INFO:
+            strarr.push(chalk.green(level.toUpperCase().toString()))
+            break
+          case LogLevelEnum.LOG_LEVEL_WARN:
+            strarr.push(chalk.yellow(level.toUpperCase().toString()))
+            break
+          case LogLevelEnum.LOG_LEVEL_ERROR:
+            strarr.push(chalk.red(level.toUpperCase().toString()))
+            break
+        }
+
+        strarr.push(chalk.green(name).toString())
+        strarr.push(chalk.gray(":"))
+
+        return strarr.join(" ")
+      },
+    })
+  }
 
   /**
-   * Output debug message to console including appropriate icons
+   * 获取日志记录器
    *
-   * @param msg - any data to log to the console
+   * @param loggerName 日志记录器，默认为 console
+   * @author terwer
+   * @since 1.0.0
    */
-  debug(...msg: any[]): void
+  public getLogger = (loggerName?: string): DefaultLogger => {
+    let loggerFrom
+    // 显示优先
+    if (loggerName) {
+      loggerFrom = loggerName
+    } else {
+      const cs = callsites()
+      const baseNames = <string[]>[]
+      for (let i = 0; i < cs.length; i++) {
+        const c = cs[i]
+        const fname = c.getFileName() ?? "none"
 
-  /**
-   * Output debug message to console including appropriate icons
-   *
-   * @param msg - any data to log to the console
-   */
-  log(...msg: any[]): void
+        if (
+          !fname.includes(".ts") &&
+          !fname.includes(".vue") &&
+          !fname.includes(".tsx")
+        ) {
+          continue
+        }
+        if (i > this.stackSize - 1) {
+          break
+        }
 
-  /**
-   * Output info message to console including appropriate icons
-   *
-   * @param msg - any data to log to the console
-   */
-  info(...msg: any[]): void
+        const baseName =
+          fname + "-" + c.getLineNumber() + ":" + c.getColumnNumber()
+        baseNames.push(baseName)
+      }
 
-  /**
-   * Output warn message to console including appropriate icons
-   *
-   * @param msg - any data to log to the console
-   */
-  warn(...msg: any[]): void
+      if (cs.length === 0) {
+        loggerFrom = undefined
+      } else {
+        loggerFrom = baseNames.join(" -> ")
+      }
+    }
 
-  /**
-   * Output error message to console including appropriate icons
-   *
-   * @param msg - any data to log to the console
-   */
-  error(...msg: any[]): void
+    loggerFrom = loggerFrom ?? this.consoleLogger
+    return loglevel.getLogger(loggerFrom) as DefaultLogger
+  }
 }
 
-export default DefaultLogger
+export default Logger

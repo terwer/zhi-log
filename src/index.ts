@@ -1,12 +1,12 @@
 /**
  * @packageDocumentation
- * This is the documentation for my package.
+ * 同时支持 Node 和 浏览器 的 简洁、强大的日志框架
  */
 
-import LogFactory from "~/src/factory/logFactory"
+import AbstractLogFactory from "~/src/factory/abstractLogFactory"
 import CustomLogFactory from "~/src/factory/customLogFactory"
 import LogLevelEnum from "~/src/logConstants"
-import DefaultLogger from "~/src/logger"
+import DefaultLogger from "~/src/defaultLogger"
 import Env from "zhi-env"
 
 /**
@@ -16,14 +16,18 @@ import Env from "zhi-env"
  * @author terwer
  * @since 1.0.7
  */
-class LogUtil {
+class LogFactory {
   /**
    * 默认日志记录器
    *
+   * @param stackSize 栈的深度
    * @param env - 环境变量实例
    */
-  public static defaultLogger(env?: Env): DefaultLogger {
-    return LogUtil.customLogFactory(undefined, undefined, env).getLogger()
+  public static defaultLogger(env?: Env, stackSize?: number): DefaultLogger {
+    return LogFactory.customLogFactory(undefined, undefined, env).getLogger(
+      undefined,
+      stackSize
+    )
   }
 
   /**
@@ -45,6 +49,6 @@ class LogUtil {
   }
 }
 
-export default LogUtil
-export { LogLevelEnum, LogFactory, CustomLogFactory }
+export default LogFactory
+export { LogLevelEnum, AbstractLogFactory, CustomLogFactory }
 export type { DefaultLogger }

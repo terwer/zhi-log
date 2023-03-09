@@ -113,7 +113,7 @@
 
 ### Features
 
-- Add different LogFactory support ([cb1b625](https://github.com/terwer/zhi-log/commit/cb1b625cdd4bd8ee837ae2ab408dfc75cdcbfba0))
+- Add different AbstractLogFactory support ([cb1b625](https://github.com/terwer/zhi-log/commit/cb1b625cdd4bd8ee837ae2ab408dfc75cdcbfba0))
 
 ## [1.0.7](https://github.com/terwer/zhi-log/compare/v1.0.6...v1.0.7) (2023-03-06)
 

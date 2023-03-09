@@ -23,10 +23,10 @@
  * questions.
  */
 
-import LogFactory from "~/src/factory/logFactory"
+import AbstractLogFactory from "~/src/factory/abstractLogFactory"
 import LogLevelEnum from "~/src/logConstants"
-import DefaultLogger from "~/src/logger"
 import Env from "zhi-env"
+import DefaultLogger from "~/src/defaultLogger"
 
 /**
  * 自定义日志工厂
@@ -35,7 +35,7 @@ import Env from "zhi-env"
  * @author terwer
  * @since 1.0.7
  */
-class CustomLogFactory extends LogFactory {
+class CustomLogFactory extends AbstractLogFactory {
   constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
     super(level, sign, env)
   }
@@ -44,9 +44,10 @@ class CustomLogFactory extends LogFactory {
    * 获取默认的日志记录器
    *
    * @param loggerName - 日志记录器名称
+   * @param stackSize - 打印栈的深度
    */
-  getLogger(loggerName?: string): DefaultLogger {
-    return super.getLogger(loggerName)
+  getLogger(loggerName?: string, stackSize?: number): DefaultLogger {
+    return super.getLogger(loggerName, stackSize)
   }
 }
 

@@ -24,9 +24,9 @@
  */
 
 import LogLevelEnum from "~/src/logConstants"
-import Log from "~/src/log"
-import DefaultLogger from "~/src/logger"
 import Env from "zhi-env"
+import Logger from "~/src/logger"
+import DefaultLogger from "~/src/defaultLogger"
 
 /**
  * 日志记录工厂
@@ -35,8 +35,8 @@ import Env from "zhi-env"
  * @author terwer
  * @since 1.0.0
  */
-abstract class LogFactory {
-  private log
+abstract class AbstractLogFactory {
+  private logger
 
   /**
    * 默认日志级别
@@ -46,18 +46,20 @@ abstract class LogFactory {
    * @param env - 可选环境变量实例
    */
   protected constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
-    this.log = new Log(level, sign, env)
+    this.logger = new Logger(level, sign, env)
   }
 
   /**
    * 获取日志记录器
    *
    * @param loggerName - 日志记录器名称
+   * @param stackSize - 打印栈的深度
    * @protected
    */
-  protected getLogger(loggerName?: string): DefaultLogger {
-    return this.log.getLogger(loggerName)
+  protected getLogger(loggerName?: string, stackSize?: number): DefaultLogger {
+    this.logger.setStackSize(stackSize)
+    return this.logger.getLogger(loggerName)
   }
 }
 
-export default LogFactory
+export default AbstractLogFactory
