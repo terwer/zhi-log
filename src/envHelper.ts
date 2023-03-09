@@ -33,8 +33,6 @@ import EnvUtil from "zhi-env"
  * @since 1.4.0
  */
 class EnvHelper {
-  private static readonly envUtil = new EnvUtil(import.meta.env)
-
   /**
    * 解析日志级别为枚举
    *
@@ -55,8 +53,13 @@ class EnvHelper {
   /**
    * 获取配置的日志级别
    */
-  public static getEnvLevel(): LogLevelEnum | undefined {
-    const envValue = EnvHelper.envUtil.getEnvOrDefault(
+  public static getEnvLevel(envMeta?: any): LogLevelEnum | undefined {
+    if (!envMeta) {
+      return undefined
+    }
+
+    const envUtil = new EnvUtil(envMeta)
+    const envValue = envUtil.getEnvOrDefault(
       LogConstants.LOG_LEVEL_KEY,
       LogLevelEnum.LOG_LEVEL_INFO
     )
@@ -76,8 +79,13 @@ class EnvHelper {
   /**
    * 获取默认日志
    */
-  public static getEnvLogger(): string | undefined {
-    return EnvHelper.envUtil.getEnv(LogConstants.LOG_PREFIX_KEY)
+  public static getEnvLogger(envMeta?: any): string | undefined {
+    if (!envMeta) {
+      return undefined
+    }
+
+    const envUtil = new EnvUtil(envMeta)
+    return envUtil.getEnv(LogConstants.LOG_PREFIX_KEY)
   }
 }
 
