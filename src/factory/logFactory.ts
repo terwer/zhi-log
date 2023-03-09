@@ -42,9 +42,10 @@ abstract class LogFactory {
    *
    * @param level - 可选，未设置默认INFO
    * @param sign - 可选前缀，默认zhi
+   * @param envMeta - 可选环境变量元数据
    */
-  protected constructor(level?: LogLevelEnum, sign?: string) {
-    this.log = new Log(level, sign)
+  protected constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
+    this.log = new Log(level, sign, envMeta)
   }
 
   /**

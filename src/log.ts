@@ -39,13 +39,13 @@ import EnvHelper from "~/src/envHelper"
 class Log {
   private consoleLogger = "console"
 
-  constructor(level?: LogLevelEnum, sign?: string) {
+  constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
     // 级别
     let customLevel = undefined
     if (level) {
       customLevel = level
     } else {
-      customLevel = EnvHelper.getEnvLevel()
+      customLevel = EnvHelper.getEnvLevel(envMeta)
     }
     customLevel = customLevel ?? LogLevelEnum.LOG_LEVEL_INFO
     loglevel.setLevel(customLevel)
@@ -69,7 +69,7 @@ class Log {
     prefix.reg(loglevel)
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        const defaultSign = sign ?? EnvHelper.getEnvLogger() ?? "zhi"
+        const defaultSign = sign ?? EnvHelper.getEnvLogger(envMeta) ?? "zhi"
         const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")

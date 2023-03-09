@@ -35,8 +35,8 @@ import DefaultLogger from "~/src/logger"
  * @since 1.0.7
  */
 class CustomLogFactory extends LogFactory {
-  constructor(level?: LogLevelEnum, sign?: string) {
-    super(level, sign)
+  constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
+    super(level, sign, envMeta)
   }
 
   /**
