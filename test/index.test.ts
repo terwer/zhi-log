@@ -38,7 +38,7 @@ describe("test log", () => {
 
   it("test default log env", function () {
     const env = new Env(import.meta.env)
-    const logger = LogFactory.defaultLogger(env, 3)
+    const logger = LogFactory.defaultLogger(env, 4)
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")
