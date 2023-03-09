@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.5.1](https://github.com/terwer/zhi-log/compare/v1.5.0...v1.5.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* fix deps ([b308c1b](https://github.com/terwer/zhi-log/commit/b308c1b1a9787dabde40110b885f1fd227c4faea))
+* fix deps ([426af7c](https://github.com/terwer/zhi-log/commit/426af7c722c05ad9c4ec03f47af9aec2294919a0))
+* log level ([fed9b96](https://github.com/terwer/zhi-log/commit/fed9b9681141403ee77df4efd835362fd273846c))
+* name ([1e16a9a](https://github.com/terwer/zhi-log/commit/1e16a9ae6e5bf12169f0e08742d0b95de24b9ba4))
+* name ([3481318](https://github.com/terwer/zhi-log/commit/3481318ac3801376fa15faf84ce656892e8cfd39))
+
 ## [1.5.0](https://github.com/terwer/zhi-log/compare/v1.4.0...v1.5.0) (2023-03-09)
 
 
