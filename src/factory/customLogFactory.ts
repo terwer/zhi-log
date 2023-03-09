@@ -26,6 +26,7 @@
 import LogFactory from "~/src/factory/logFactory"
 import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
+import Env from "zhi-env"
 
 /**
  * 自定义日志工厂
@@ -35,8 +36,8 @@ import DefaultLogger from "~/src/logger"
  * @since 1.0.7
  */
 class CustomLogFactory extends LogFactory {
-  constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
-    super(level, sign, envMeta)
+  constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
+    super(level, sign, env)
   }
 
   /**

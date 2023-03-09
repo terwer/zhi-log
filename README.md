@@ -8,13 +8,13 @@ a simple logger for Node and Browser
 ## Usage
 
 ```ts
-import LogUtil from "zhi-log" 
+import LogUtil from "zhi-log"
 
-const logger = LogUtil.defaultLogger()
+const env = new Env(import.meta.env)
+const logger = LogUtil.defaultLogger(env)
 logger.debug("debug msg")
 logger.info("info msg")
 logger.error("error msg")
-
 ```
 
 ## Deps

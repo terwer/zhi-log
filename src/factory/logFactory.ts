@@ -26,6 +26,7 @@
 import LogLevelEnum from "~/src/logConstants"
 import Log from "~/src/log"
 import DefaultLogger from "~/src/logger"
+import Env from "zhi-env"
 
 /**
  * 日志记录工厂
@@ -42,10 +43,10 @@ abstract class LogFactory {
    *
    * @param level - 可选，未设置默认INFO
    * @param sign - 可选前缀，默认zhi
-   * @param envMeta - 可选环境变量元数据
+   * @param env - 可选环境变量实例
    */
-  protected constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
-    this.log = new Log(level, sign, envMeta)
+  protected constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
+    this.log = new Log(level, sign, env)
   }
 
   /**

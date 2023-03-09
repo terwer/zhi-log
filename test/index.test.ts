@@ -26,10 +26,19 @@
 import { describe, it } from "vitest"
 import LogUtil from "~/src/index"
 import LogLevelEnum from "~/src/logConstants"
+import Env from "zhi-env"
 
 describe("test log", () => {
   it("test default log", function () {
     const logger = LogUtil.defaultLogger()
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
+
+  it("test default log env", function () {
+    const env = new Env(import.meta.env)
+    const logger = LogUtil.defaultLogger(env)
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")

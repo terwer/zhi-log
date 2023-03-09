@@ -24,7 +24,7 @@
  */
 
 import LogLevelEnum, { LogConstants } from "~/src/logConstants"
-import EnvUtil from "zhi-env"
+import Env from "zhi-env"
 
 /**
  * 解析日志级别为枚举
@@ -53,13 +53,12 @@ class EnvHelper {
   /**
    * 获取配置的日志级别
    */
-  public static getEnvLevel(envMeta?: any): LogLevelEnum | undefined {
-    if (!envMeta) {
+  public static getEnvLevel(env?: Env): LogLevelEnum | undefined {
+    if (!env) {
       return undefined
     }
 
-    const envUtil = new EnvUtil(envMeta)
-    const envValue = envUtil.getEnvOrDefault(
+    const envValue = env.getEnvOrDefault(
       LogConstants.LOG_LEVEL_KEY,
       LogLevelEnum.LOG_LEVEL_INFO
     )
@@ -79,13 +78,11 @@ class EnvHelper {
   /**
    * 获取默认日志
    */
-  public static getEnvLogger(envMeta?: any): string | undefined {
-    if (!envMeta) {
+  public static getEnvLogger(env?: Env): string | undefined {
+    if (!env) {
       return undefined
     }
-
-    const envUtil = new EnvUtil(envMeta)
-    return envUtil.getEnv(LogConstants.LOG_PREFIX_KEY)
+    return env.getEnv(LogConstants.LOG_PREFIX_KEY)
   }
 }
 
