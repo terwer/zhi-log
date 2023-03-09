@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/terwer/zhi-log/compare/v1.5.2...v1.5.3) (2023-03-09)
+
+
+### Bug Fixes
+
+* custom env support ([bb93984](https://github.com/terwer/zhi-log/commit/bb939840235e5021d0873a04250a7288d087511e))
+
 ## [1.5.2](https://github.com/terwer/zhi-log/compare/v1.5.1...v1.5.2) (2023-03-09)
 
 
