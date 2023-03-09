@@ -51,6 +51,8 @@ class Logger {
   }
 
   constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
+    this.stackSize = 1
+
     // 级别
     let customLevel = undefined
     if (level) {
@@ -124,12 +126,16 @@ class Logger {
     } else {
       const cs = callsites()
       const baseNames = <string[]>[]
+
       for (let i = 0; i < cs.length; i++) {
         const c = cs[i]
         const fname = c.getFileName() ?? "none"
 
         if (
           !fname.includes(".ts") &&
+          !fname.includes(".js") &&
+          !fname.includes(".cjs") &&
+          !fname.includes(".mjs") &&
           !fname.includes(".vue") &&
           !fname.includes(".tsx")
         ) {
@@ -144,14 +150,14 @@ class Logger {
         baseNames.push(baseName)
       }
 
-      if (cs.length === 0) {
-        loggerFrom = undefined
-      } else {
+      if (cs.length > 0) {
         loggerFrom = baseNames.join(" -> ")
       }
     }
 
-    loggerFrom = loggerFrom ?? this.consoleLogger
+    if (!loggerFrom || loggerFrom.trim() === "") {
+      loggerFrom = this.consoleLogger
+    }
     return loglevel.getLogger(loggerFrom) as DefaultLogger
   }
 }

@@ -51,6 +51,13 @@ describe("test log", () => {
     logger.error("This is error log")
   })
 
+  it("test default logger", function () {
+    const logger = LogFactory.customLogFactory().getLogger(undefined, 2)
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
+
   it("test custom logger", function () {
     const logger = LogFactory.customLogFactory().getLogger("haha")
     logger.debug("This is debug log")
