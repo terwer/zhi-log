@@ -28,7 +28,6 @@ import prefix from "loglevel-plugin-prefix"
 import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
 import callsites from "callsites"
-import dotenv from "dotenv"
 import EnvHelper from "~/src/envHelper"
 import path from "path"
 
@@ -42,8 +41,6 @@ class Log {
   private consoleLogger = "console"
 
   constructor(level?: LogLevelEnum, sign?: string) {
-    dotenv.config({ debug: true })
-
     // 级别
     let customLevel = undefined
     if (level) {

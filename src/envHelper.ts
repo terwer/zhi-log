@@ -24,6 +24,7 @@
  */
 
 import LogLevelEnum from "~/src/logConstants"
+import EnvUtil from "zhi-env"
 
 /**
  * 解析日志级别为枚举
@@ -32,35 +33,38 @@ import LogLevelEnum from "~/src/logConstants"
  * @since 1.4.0
  */
 class EnvHelper {
+  private static readonly LOG_LEVEL_KEY = "LOG_LEVEL"
+  private static readonly DEFAULT_LOGGER_KEY = "DEFAULT_LOGGER"
+
   /**
    * 解析日志级别为枚举
    *
    * @param enumObj 枚举对象
    * @param value 配置的值
    */
-  private static stringToEnumValue = <
+  private static stringToEnumValue<
     T extends Record<string, string>,
     K extends keyof T
-  >(
-    enumObj: T,
-    value: string
-  ): T[keyof T] | undefined =>
-    enumObj[
+  >(enumObj: T, value: string): T[keyof T] | undefined {
+    return enumObj[
       Object.keys(enumObj).filter(
         (k) => enumObj[k as K].toString() === value
       )[0] as keyof typeof enumObj
     ]
+  }
 
   /**
    * 获取配置的日志级别
    */
   public static getEnvLevel(): LogLevelEnum | undefined {
-    const envLevel = process.env.LOG_LEVEL
-      ? EnvHelper.stringToEnumValue(
-          LogLevelEnum,
-          process.env.LOG_LEVEL.toUpperCase()
-        )
-      : LogLevelEnum.LOG_LEVEL_INFO
+    const envValue = EnvUtil.getEnvOrDefault(
+      EnvHelper.LOG_LEVEL_KEY,
+      LogLevelEnum.LOG_LEVEL_INFO
+    )
+    const envLevel = EnvHelper.stringToEnumValue(
+      LogLevelEnum,
+      envValue.toUpperCase()
+    )
     if (!envLevel) {
       console.warn(
         "[zhi-log] LOG_LEVEL is invalid in you .env file.Must be either debug, info, warn or error, fallback to default info level"
@@ -74,7 +78,7 @@ class EnvHelper {
    * 获取默认日志
    */
   public static getEnvLogger(): string | undefined {
-    return process.env.DEFAULT_LOGGER
+    return EnvUtil.getEnv(EnvHelper.DEFAULT_LOGGER_KEY)
   }
 }
 

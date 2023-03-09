@@ -24,21 +24,12 @@
  */
 
 import { describe, it } from "vitest"
-import LogUtil from "~/src/index"
-import LogLevelEnum from "~/src/logConstants"
+import LogUtil from "~/lib/index"
+import { LogLevelEnum } from "~/lib/index"
 
-describe("test log", () => {
+describe("test dist", () => {
   it("test default log", function () {
     const logger = LogUtil.defaultLogger()
-    logger.debug("This is debug log")
-    logger.info("This is info log")
-    logger.error("This is error log")
-  })
-
-  it("test custom log level", function () {
-    const logger = LogUtil.customLogFactory(
-      LogLevelEnum.LOG_LEVEL_DEBUG
-    ).getLogger("test")
     logger.debug("This is debug log")
     logger.info("This is info log")
     logger.error("This is error log")

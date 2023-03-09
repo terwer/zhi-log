@@ -9,6 +9,7 @@ a simple logger for Node and Browser
 ├── loglevel
 ├── loglevel-plugin-prefix
 ```
+
 ## Useful scripts
 
 ### Build
