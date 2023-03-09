@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.4](https://github.com/terwer/zhi-log/compare/v1.5.3...v1.5.4) (2023-03-09)
+
+
+### Bug Fixes
+
+* custom logger ([745a7ec](https://github.com/terwer/zhi-log/commit/745a7ec149df136a4aa57d843b781e0bdddc8168))
+
 ## [1.5.3](https://github.com/terwer/zhi-log/compare/v1.5.2...v1.5.3) (2023-03-09)
 
 
