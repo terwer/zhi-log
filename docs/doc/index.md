@@ -6,6 +6,7 @@
 
 ## Packages
 
-| Package               | Description                               |
-| --------------------- | ----------------------------------------- |
-| [terwer](./terwer.md) | This is the documentation for my package. |
+| Package                 | Description                               |
+| ----------------------- | ----------------------------------------- |
+| [terwer](./terwer.md)   | This is the documentation for my package. |
+| [zhi-log](./zhi-log.md) | This is the documentation for my package. |

@@ -20,12 +20,12 @@ specifiers:
   vite-plugin-dts: ^2.1.0
   vitepress: 1.0.0-alpha.50
   vitest: ^0.29.2
-  zhi-env: ^1.7.0
+  zhi-env: ^1.8.1
 
 dependencies:
   loglevel: 1.8.1
   loglevel-plugin-prefix: 0.8.4
-  zhi-env: 1.7.0
+  zhi-env: 1.8.1
 
 devDependencies:
   '@microsoft/api-documenter': 7.21.5_@types+node@16.18.14
@@ -6444,6 +6444,6 @@ packages:
       commander: 9.5.0
     dev: true
 
-  /zhi-env/1.7.0:
-    resolution: {integrity: sha512-0p2t6T/rthl19AGn5sNe0qH1L2MFZ0eeVpvzdWjzh0a/J6BEO6IeGHpxiL2jWYJc2B+U69EnsxMskT+OB1/wfA==}
+  /zhi-env/1.8.1:
+    resolution: {integrity: sha512-fnXbaLMex2FB13DjEHlbwoThLtqHbsO6QEKrW9UAsCdpJNkrfU4OreIU35IwqZwmsKPa9j7+tclxODRkckH39g==}
     dev: false
