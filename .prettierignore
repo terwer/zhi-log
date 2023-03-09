@@ -8,14 +8,11 @@
 # Ignore artifacts:
 build
 coverage
-extension
+lib
 node_modules
-out
 
 # Ignore all HTML files:
 *.html
 
 # lib
-*.min.js
-*mathjax*
 /pnpm-lock.yaml

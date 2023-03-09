@@ -27,6 +27,8 @@ import loglevel from "loglevel"
 import prefix from "loglevel-plugin-prefix"
 import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
+import callsites from "callsites"
+import EnvHelper from "~/src/envHelper"
 
 /**
  * 日志工具类
@@ -37,17 +39,18 @@ import DefaultLogger from "~/src/logger"
 class Log {
   private consoleLogger = "console"
 
-  stringToEnumValue = <T extends Record<string, string>, K extends keyof T>(
-    enumObj: T,
-    value: string
-  ): T[keyof T] | undefined =>
-    enumObj[
-      Object.keys(enumObj).filter(
-        (k) => enumObj[k as K].toString() === value
-      )[0] as keyof typeof enumObj
-    ]
+  constructor(level?: LogLevelEnum, sign?: string) {
+    // 级别
+    let customLevel = undefined
+    if (level) {
+      customLevel = level
+    } else {
+      customLevel = EnvHelper.getEnvLevel()
+    }
+    customLevel = customLevel ?? LogLevelEnum.LOG_LEVEL_INFO
+    loglevel.setLevel(customLevel)
 
-  constructor(level: LogLevelEnum, sign?: string) {
+    // 颜色
     // polyfill due to https://github.com/vitejs/vite/issues/7385
     const chalk = {
       gray: (src: any): string => {
@@ -63,30 +66,10 @@ class Log {
         return src.toString()
       },
     }
-
     prefix.reg(loglevel)
-    let customLevel
-    if (level) {
-      customLevel = level
-    } else {
-      const envLevel = process.env.LOG_LEVEL
-        ? this.stringToEnumValue(
-            LogLevelEnum,
-            process.env.LOG_LEVEL.toUpperCase()
-          )
-        : LogLevelEnum.LOG_LEVEL_INFO
-      if (!envLevel) {
-        console.warn(
-          "[zhi-log] LOG_LEVEL is invalid in you .env file.Must be either debug, info, warn or error, fallback to default info level"
-        )
-      }
-      customLevel = envLevel ?? LogLevelEnum.LOG_LEVEL_INFO
-    }
-    loglevel.setLevel(customLevel)
-
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        const defaultSign = sign ?? process.env.DEFAULT_LOGGER ?? "zhi"
+        const defaultSign = sign ?? EnvHelper.getEnvLogger() ?? "zhi"
         const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")
@@ -123,7 +106,42 @@ class Log {
    * @since 1.0.0
    */
   public getLogger = (loggerName?: string): DefaultLogger => {
-    return loglevel.getLogger(loggerName ?? this.consoleLogger) as DefaultLogger
+    let loggerFrom
+    // 显示优先
+    if (loggerName) {
+      loggerFrom = loggerName
+    } else {
+      const cs = callsites()
+      const baseNames = <string[]>[]
+      for (let i = 0; i < cs.length; i++) {
+        const c = cs[i]
+        const fname = c.getFileName() ?? "none"
+
+        if (
+          !fname.includes(".ts") &&
+          !fname.includes(".vue") &&
+          !fname.includes(".tsx")
+        ) {
+          continue
+        }
+        if (i > 5) {
+          break
+        }
+
+        const baseName =
+          fname + "-" + c.getLineNumber() + ":" + c.getColumnNumber()
+        baseNames.push(baseName)
+      }
+
+      if (cs.length === 0) {
+        loggerFrom = undefined
+      } else {
+        loggerFrom = baseNames.join(" -> ")
+      }
+    }
+
+    loggerFrom = loggerFrom ?? this.consoleLogger
+    return loglevel.getLogger(loggerFrom) as DefaultLogger
   }
 }
 

@@ -45,7 +45,7 @@ class CustomLogFactory extends LogFactory {
    * @param loggerName - 日志记录器名称
    */
   getLogger(loggerName?: string): DefaultLogger {
-    return super.getLogger(loggerName ?? "")
+    return super.getLogger(loggerName)
   }
 }
 

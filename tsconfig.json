@@ -9,19 +9,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,
     "noImplicitAny": true,
     "declaration": true,
     "declarationMap": true,
     "baseUrl": ".",
+    "outDir": "./lib",
     "paths": {
-      "~/*": ["./*"],
-      "loglevel": ["node_modules/loglevel"]
-    },
-    "types": [],
-    "lib": ["ESNext"]
+      "~/*": ["./*"]
+    }
   },
-  "include": ["src/**/*.ts"]
+  "include": [".eslintrc.cjs", "./**/*.ts", "*.ts"],
+  "exclude": [".github", "node_modules", "lib/**/*"]
 }

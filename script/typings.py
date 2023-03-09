@@ -10,16 +10,12 @@ if __name__ == "__main__":
     # 切换工作空间
     scriptutils.switch_workdir()
 
+    scriptutils.mkdir("./temp")
     scriptutils.mkdir("./etc")
     scriptutils.mkdir("./doc")
     scriptutils.mkdir("./typings")
-    os.system("tsc -p .")
+
     # os.system("api-extractor run --local --diagnostics")
     os.system("api-extractor run --local")
     os.system("api-documenter markdown -i temp -o doc")
-    os.system("pnpm prettier")
-    os.system("pnpm lint")
-    os.system("rm ./src/*.d.ts")
-    os.system("rm ./src/*.map")
-    os.system("rm ./src/*.js")
     print("compile finished.")
