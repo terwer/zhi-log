@@ -7,6 +7,7 @@ import LogFactory from "~/src/factory/logFactory"
 import CustomLogFactory from "~/src/factory/customLogFactory"
 import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
+import Env from "zhi-env"
 
 /**
  * 日志工具类
@@ -19,10 +20,10 @@ class LogUtil {
   /**
    * 默认日志记录器
    *
-   * @param envMeta - 可选环境变量元数据，特别注意：如果需要使用环境变量控制日志，请务必传递 import.meta.env
+   * @param env - 环境变量实例
    */
-  public static defaultLogger(envMeta?: any): DefaultLogger {
-    return LogUtil.customLogFactory(undefined, undefined, envMeta).getLogger()
+  public static defaultLogger(env?: Env): DefaultLogger {
+    return LogUtil.customLogFactory(undefined, undefined, env).getLogger()
   }
 
   /**
@@ -31,16 +32,16 @@ class LogUtil {
   public static customLogFactory(
     level?: LogLevelEnum,
     sign?: string,
-    envMeta?: any
+    env?: Env
   ) {
-    return new CustomLogFactory(level, sign, envMeta)
+    return new CustomLogFactory(level, sign, env)
   }
 
   /**
    * 自定义日志工厂，自定义前缀
    */
-  public static customSignLogFactory(sign?: string, envMeta?: any) {
-    return new CustomLogFactory(undefined, sign, envMeta)
+  public static customSignLogFactory(sign?: string, env?: Env) {
+    return new CustomLogFactory(undefined, sign, env)
   }
 }
 

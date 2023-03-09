@@ -29,6 +29,7 @@ import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
 import callsites from "callsites"
 import EnvHelper from "~/src/envHelper"
+import Env from "zhi-env"
 
 /**
  * 日志工具类
@@ -39,13 +40,13 @@ import EnvHelper from "~/src/envHelper"
 class Log {
   private consoleLogger = "console"
 
-  constructor(level?: LogLevelEnum, sign?: string, envMeta?: any) {
+  constructor(level?: LogLevelEnum, sign?: string, env?: Env) {
     // 级别
     let customLevel = undefined
     if (level) {
       customLevel = level
     } else {
-      customLevel = EnvHelper.getEnvLevel(envMeta)
+      customLevel = EnvHelper.getEnvLevel(env)
     }
     customLevel = customLevel ?? LogLevelEnum.LOG_LEVEL_INFO
     loglevel.setLevel(customLevel)
@@ -69,7 +70,7 @@ class Log {
     prefix.reg(loglevel)
     prefix.apply(loglevel, {
       format(level, name, timestamp) {
-        const defaultSign = sign ?? EnvHelper.getEnvLogger(envMeta) ?? "zhi"
+        const defaultSign = sign ?? EnvHelper.getEnvLogger(env) ?? "zhi"
         const strarr = ["[" + defaultSign + "]"]
         strarr.push(
           chalk.gray("[") + chalk.green(timestamp).toString() + chalk.gray("]")
