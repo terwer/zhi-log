@@ -2,6 +2,10 @@
   "name": "terwer",
   "version": "1.4.0",
   "description": "ts template lib for test",
+  "files": [
+    "lib",
+    "typings"
+  ],
   "type": "module",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
@@ -27,6 +31,8 @@
     "template": "python script/template.py -b",
     "restore": "python script/template.py -r",
     "helpdoc": "jsdoc2vitepress start",
+    "vitepress:api": "mkdir -p etc && mkdir -p temp && api-extractor run --local",
+    "vitepress:prepare": "api-documenter markdown -i temp -o docs/doc",
     "vitepress:dev": "vitepress dev docs",
     "vitepress:build": "vitepress build docs"
   },
@@ -56,6 +62,6 @@
   "dependencies": {
     "loglevel": "^1.8.1",
     "loglevel-plugin-prefix": "^0.8.4",
-    "zhi-env": "^1.6.0"
+    "zhi-env": "^1.7.0"
   }
 }

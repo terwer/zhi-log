@@ -29,7 +29,6 @@ import LogLevelEnum from "~/src/logConstants"
 import DefaultLogger from "~/src/logger"
 import callsites from "callsites"
 import EnvHelper from "~/src/envHelper"
-import path from "path"
 
 /**
  * 日志工具类
@@ -130,11 +129,7 @@ class Log {
         }
 
         const baseName =
-          path.basename(fname) +
-          "-" +
-          c.getLineNumber() +
-          ":" +
-          c.getColumnNumber()
+          fname + "-" + c.getLineNumber() + ":" + c.getColumnNumber()
         baseNames.push(baseName)
       }
 

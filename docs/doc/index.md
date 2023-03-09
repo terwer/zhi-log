@@ -3,3 +3,9 @@
 [Home](./index.md)
 
 ## API Reference
+
+## Packages
+
+| Package               | Description                               |
+| --------------------- | ----------------------------------------- |
+| [terwer](./terwer.md) | This is the documentation for my package. |

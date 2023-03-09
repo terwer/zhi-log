@@ -24,6 +24,19 @@
  */
 
 /**
+ * 日志常量
+ *
+ * @public
+ * @author terwer
+ * @since 1.4.0
+ */
+class LogConstants {
+  public static readonly LOG_LEVEL_KEY = "VITE_LOG_LEVEL"
+  public static readonly LOG_PREFIX_KEY = "VITE_LOG_PREFIX"
+}
+export { LogConstants }
+
+/**
  * 日志级别
  *
  * @author terwer
@@ -48,4 +61,5 @@ enum LogLevelEnum {
    */
   LOG_LEVEL_ERROR = "ERROR",
 }
+
 export default LogLevelEnum

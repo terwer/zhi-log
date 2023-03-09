@@ -29,6 +29,13 @@ class LogUtil {
   public static customLogFactory(level?: LogLevelEnum, sign?: string) {
     return new CustomLogFactory(level, sign)
   }
+
+  /**
+   * 自定义日志工厂，自定义前缀
+   */
+  public static customSignLogFactory(sign?: string) {
+    return new CustomLogFactory(undefined, sign)
+  }
 }
 
 export default LogUtil

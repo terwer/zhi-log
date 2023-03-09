@@ -35,6 +35,20 @@ describe("test log", () => {
     logger.error("This is error log")
   })
 
+  it("test custom sign", function () {
+    const logger = LogUtil.customSignLogFactory("haha").getLogger()
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
+
+  it("test custom logger", function () {
+    const logger = LogUtil.customLogFactory().getLogger("haha")
+    logger.debug("This is debug log")
+    logger.info("This is info log")
+    logger.error("This is error log")
+  })
+
   it("test custom log level", function () {
     const logger = LogUtil.customLogFactory(
       LogLevelEnum.LOG_LEVEL_DEBUG
@@ -44,7 +58,7 @@ describe("test log", () => {
     logger.error("This is error log")
   })
 
-  it("test custom sign", function () {
+  it("test custom level and sign", function () {
     const logger = LogUtil.customLogFactory(
       LogLevelEnum.LOG_LEVEL_DEBUG,
       "my-log"
