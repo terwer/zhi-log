@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/terwer/zhi-log/compare/v1.5.4...v1.5.5) (2023-03-09)
+
+
+### Bug Fixes
+
+* log file type ([04edc80](https://github.com/terwer/zhi-log/commit/04edc8067ac0a3a7e1f4028ab8f4c5b6e56755d3))
+
 ## [1.5.4](https://github.com/terwer/zhi-log/compare/v1.5.3...v1.5.4) (2023-03-09)
 
 
