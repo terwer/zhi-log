@@ -19,7 +19,7 @@ specifiers:
   typescript: ^4.9.5
   vite: ^4.1.4
   vite-plugin-dts: ^2.1.0
-  vitepress: 1.0.0-alpha.50
+  vitepress: 1.0.0-alpha.58
   vitepress-plugin-autobar: ^1.0.8
   vitest: ^0.29.2
   zhi-env: ^1.9.0
@@ -46,7 +46,7 @@ devDependencies:
   typescript: 4.9.5
   vite: 4.1.4_@types+node@16.18.14
   vite-plugin-dts: 2.1.0_palfitq7jg67mg4usbzuzyleke
-  vitepress: 1.0.0-alpha.50_@types+node@16.18.14
+  vitepress: 1.0.0-alpha.58_@types+node@16.18.14
   vitepress-plugin-autobar: 1.0.8
   vitest: 0.29.2
 
@@ -6159,8 +6159,8 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /vitepress/1.0.0-alpha.50_@types+node@16.18.14:
-    resolution: {integrity: sha512-6EdT6JIiHRD7KatKMfxCJ3J7aHlkMp67ZEcfYrMTLKAJ+K+qWs2p427udMHSenCOzVNLIikEC5v/rP3GOGWubQ==}
+  /vitepress/1.0.0-alpha.58_@types+node@16.18.14:
+    resolution: {integrity: sha512-aENSAiE2uKMoQPwBTELY8Nig5qSWrmAl+MgsO3l/TE8At6kXii+2rseEId/bVfT700JeucYdqtCgWxu+LwpYIw==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
