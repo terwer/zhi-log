@@ -3,7 +3,7 @@
 a simple logger for Node and Browser
 
 ![version](https://img.shields.io/github/release/terwer/zhi-log.svg?style=flat-square)
-![license](https://img.shields.io/badge/license-MIT-blue.svg?style=popout-square)
+![license](https://img.shields.io/badge/license-GPL-blue.svg?style=popout-square)
 
 ## Usage
 
