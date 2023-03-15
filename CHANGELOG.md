@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.5.6](https://github.com/terwer/zhi-log/compare/v1.5.5...v1.5.6) (2023-03-15)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump vitepress from 1.0.0-alpha.50 to 1.0.0-alpha.58 ([6ad7b4d](https://github.com/terwer/zhi-log/commit/6ad7b4d51614fefa9764d16839151dbb92b32a30))
+* update docs ([a97e84e](https://github.com/terwer/zhi-log/commit/a97e84e06d95dbe8146456903c94024527294f2e))
+* update license ([3ddc0ce](https://github.com/terwer/zhi-log/commit/3ddc0ceb1e1bccf7a8e71fcd3812efa09b0f3167))
+* update license ([4c696c7](https://github.com/terwer/zhi-log/commit/4c696c73174ffadd8febab6ce3c7f206048a887c))
+* update zhi-env ([fd456cf](https://github.com/terwer/zhi-log/commit/fd456cf8962d831229442959c87636e8b4dadec8))
+
 ## [1.5.5](https://github.com/terwer/zhi-log/compare/v1.5.4...v1.5.5) (2023-03-09)
 
 ### Bug Fixes
