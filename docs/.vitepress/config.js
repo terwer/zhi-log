@@ -4,7 +4,7 @@ export default {
   description: "a simple logger for Node and Browser",
   base: "/", // 设置站点根路径
   outDir: "./.vitepress/dist", // 设置输出目录
-  repo: "https://github.com/terwer/zhi-env", // 添加 git 链接
+  repo: "https://github.com/terwer/zhi-log", // 添加 git 链接
   markdown: {
     toc: { includeLevel: [2, 3] },
   },
@@ -12,7 +12,7 @@ export default {
     // 添加导航栏
     nav: [
       {
-        text: "zhi-log",
+        text: "Home",
         link: "/",
         target: "_self",
       },

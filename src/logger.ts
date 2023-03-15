@@ -44,7 +44,7 @@ class Logger {
   /**
    * 设置输出栈的深度，默认1
    *
-   * @param stackSize 栈的深度
+   * @param stackSize - 栈的深度
    */
   public setStackSize(stackSize?: number): void {
     this.stackSize = stackSize ?? 1
@@ -114,7 +114,7 @@ class Logger {
   /**
    * 获取日志记录器
    *
-   * @param loggerName 日志记录器，默认为 console
+   * @param loggerName - 日志记录器，默认为 console
    * @author terwer
    * @since 1.0.0
    */
@@ -124,23 +124,15 @@ class Logger {
     if (loggerName) {
       loggerFrom = loggerName
     } else {
-      const cs = callsites()
+      const allcs = callsites()
       const baseNames = <string[]>[]
 
-      for (let i = 0; i < cs.length; i++) {
-        const c = cs[i]
+      const cs = []
+
+      for (let i = 0; i < allcs.length; i++) {
+        const c = allcs[i]
         const fname = c.getFileName() ?? "none"
 
-        if (
-          !fname.includes(".ts") &&
-          !fname.includes(".js") &&
-          !fname.includes(".cjs") &&
-          !fname.includes(".mjs") &&
-          !fname.includes(".vue") &&
-          !fname.includes(".tsx")
-        ) {
-          continue
-        }
         if (i > this.stackSize - 1) {
           break
         }
