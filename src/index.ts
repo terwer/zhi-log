@@ -20,7 +20,7 @@ class LogFactory {
   /**
    * 默认日志记录器
    *
-   * @param stackSize 栈的深度
+   * @param stackSize - 栈的深度
    * @param env - 环境变量实例
    */
   public static defaultLogger(env?: Env, stackSize?: number): DefaultLogger {

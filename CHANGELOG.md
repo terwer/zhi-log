@@ -2,34 +2,30 @@
 
 ## [1.5.5](https://github.com/terwer/zhi-log/compare/v1.5.4...v1.5.5) (2023-03-09)
 
-
 ### Bug Fixes
 
-* fix doc ([06285fd](https://github.com/terwer/zhi-log/commit/06285fd0a85a303ddf3913659c75e81c458b8bfc))
-* log file type ([064bf63](https://github.com/terwer/zhi-log/commit/064bf63e198ece3a85f9d004d84402e521ea0410))
-* log file type ([04edc80](https://github.com/terwer/zhi-log/commit/04edc8067ac0a3a7e1f4028ab8f4c5b6e56755d3))
+- fix doc ([06285fd](https://github.com/terwer/zhi-log/commit/06285fd0a85a303ddf3913659c75e81c458b8bfc))
+- log file type ([064bf63](https://github.com/terwer/zhi-log/commit/064bf63e198ece3a85f9d004d84402e521ea0410))
+- log file type ([04edc80](https://github.com/terwer/zhi-log/commit/04edc8067ac0a3a7e1f4028ab8f4c5b6e56755d3))
 
 ## [1.5.4](https://github.com/terwer/zhi-log/compare/v1.5.3...v1.5.4) (2023-03-09)
 
-
 ### Bug Fixes
 
-* custom logger ([745a7ec](https://github.com/terwer/zhi-log/commit/745a7ec149df136a4aa57d843b781e0bdddc8168))
+- custom logger ([745a7ec](https://github.com/terwer/zhi-log/commit/745a7ec149df136a4aa57d843b781e0bdddc8168))
 
 ## [1.5.3](https://github.com/terwer/zhi-log/compare/v1.5.2...v1.5.3) (2023-03-09)
 
-
 ### Bug Fixes
 
-* custom env support ([bb93984](https://github.com/terwer/zhi-log/commit/bb939840235e5021d0873a04250a7288d087511e))
+- custom env support ([bb93984](https://github.com/terwer/zhi-log/commit/bb939840235e5021d0873a04250a7288d087511e))
 
 ## [1.5.2](https://github.com/terwer/zhi-log/compare/v1.5.1...v1.5.2) (2023-03-09)
 
-
 ### Bug Fixes
 
-* fix doc ([d6177ac](https://github.com/terwer/zhi-log/commit/d6177acddd72f0f6a6837d9f2b4c083e701981ed))
-* fix env ([262218b](https://github.com/terwer/zhi-log/commit/262218ba9567d2538ad0fe397a621ed7491b5da1))
+- fix doc ([d6177ac](https://github.com/terwer/zhi-log/commit/d6177acddd72f0f6a6837d9f2b4c083e701981ed))
+- fix env ([262218b](https://github.com/terwer/zhi-log/commit/262218ba9567d2538ad0fe397a621ed7491b5da1))
 
 ## [1.5.1](https://github.com/terwer/zhi-log/compare/v1.5.0...v1.5.1) (2023-03-09)
 
