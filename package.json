@@ -36,10 +36,6 @@
     "vitepress:dev": "vitepress dev docs",
     "vitepress:build": "vitepress build docs"
   },
-  "repository": "terwer/zhi-log",
-  "homepage": "https://log.terwer.space",
-  "author": "terwer",
-  "license": "MIT",
   "devDependencies": {
     "@microsoft/api-documenter": "^7.21.5",
     "@microsoft/api-extractor": "^7.34.4",
@@ -64,6 +60,10 @@
     "callsites": "^4.0.0",
     "loglevel": "^1.8.1",
     "loglevel-plugin-prefix": "^0.8.4",
-    "zhi-env": "^1.8.2"
-  }
+    "zhi-env": "^1.9.0"
+  },
+  "repository": "terwer/zhi-log",
+  "homepage": "https://log.terwer.space",
+  "author": "terwer",
+  "license": "MIT"
 }
