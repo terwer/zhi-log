@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.6.0](https://github.com/terwer/zhi-log/compare/v1.5.6...v1.6.0) (2023-03-16)
+
+
+### Features
+
+* handle callsites ([64f7b2b](https://github.com/terwer/zhi-log/commit/64f7b2b316987cbfaff2c2f831b909f7201a7d42))
+
+
+### Bug Fixes
+
+* if callsites not get logger, just ignore ([e9e87c1](https://github.com/terwer/zhi-log/commit/e9e87c12637f12e2d79fe4a5c9cb35b8c58460b6))
+* if callsites not get logger, just ignore ([b186dae](https://github.com/terwer/zhi-log/commit/b186daeeaad3ba982c7e537053315ac6cb6e5ad5))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump vitepress from 1.0.0-alpha.58 to 1.0.0-alpha.60 ([f483364](https://github.com/terwer/zhi-log/commit/f483364451d301f2f4db7a1c9dd777f1872ad79d))
+* update license ([50c5415](https://github.com/terwer/zhi-log/commit/50c54150607e5cd7fd9ff275ff69b6442f145b5a))
+* update vitepress ([8b3930f](https://github.com/terwer/zhi-log/commit/8b3930fd21da922e62f97a002fb7ca08d07d674d))
+
 ## [1.5.6](https://github.com/terwer/zhi-log/compare/v1.5.5...v1.5.6) (2023-03-15)
 
 
