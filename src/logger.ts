@@ -26,7 +26,7 @@
 import loglevel from "loglevel"
 import prefix from "loglevel-plugin-prefix"
 import LogLevelEnum from "~/src/logConstants"
-import callsites from "callsites"
+import callsites, { CallSite } from "callsites"
 import EnvHelper from "~/src/envHelper"
 import Env from "zhi-env"
 import { DefaultLogger } from "~/typings"
@@ -112,6 +112,23 @@ class Logger {
   }
 
   /**
+   * 获取调用堆栈
+   *
+   * @author terwer
+   * @since 1.6.0
+   */
+  public getCallStack(): CallSite[] {
+    let cs: CallSite[]
+    try {
+      cs = callsites()
+    } catch (e) {
+      // if callsites not get logger, just ignore
+      cs = []
+    }
+    return cs
+  }
+
+  /**
    * 获取日志记录器
    *
    * @param loggerName - 日志记录器，默认为 console
@@ -124,13 +141,7 @@ class Logger {
     if (loggerName) {
       loggerFrom = loggerName
     } else {
-      let allcs: any[]
-      try {
-        allcs = callsites()
-      } catch (e) {
-        // if callsites not get logger, just ignore
-        allcs = []
-      }
+      const allcs = this.getCallStack()
       const baseNames = <string[]>[]
 
       const cs = []
