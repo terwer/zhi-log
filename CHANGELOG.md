@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/terwer/zhi-log/compare/v1.6.0...v1.6.1) (2023-03-16)
+
+
+### Miscellaneous
+
+* update zhi-env ([49f1cfe](https://github.com/terwer/zhi-log/commit/49f1cfe12305292ca13cd3fa2b73c16c3d64659b))
+
 ## [1.6.0](https://github.com/terwer/zhi-log/compare/v1.5.6...v1.6.0) (2023-03-16)
 
 
