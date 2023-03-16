@@ -124,7 +124,13 @@ class Logger {
     if (loggerName) {
       loggerFrom = loggerName
     } else {
-      const allcs = callsites()
+      let allcs: any[]
+      try {
+        allcs = callsites()
+      } catch (e) {
+        // if callsites not get logger, just ignore
+        allcs = []
+      }
       const baseNames = <string[]>[]
 
       const cs = []
