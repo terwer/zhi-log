@@ -112,7 +112,7 @@ class Logger {
   }
 
   /**
-   * 获取调用堆栈
+   * 获取调用堆栈，若未获取到直接返回空数组
    *
    * @author terwer
    * @since 1.6.0
